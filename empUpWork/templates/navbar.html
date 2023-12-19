@@ -1,14 +1,17 @@
 <nav>
-    <a href="/" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
+    <a href="{% url 'home_page' %}" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
         Home
     </a>
-    <a href="/books" data-bs-toggle="tooltip" data-bs-placement="top" title="Books">
-        Books
+    <a href="{% url 'books_view' %}" data-bs-toggle="tooltip" data-bs-placement="top" title="Books">
+        Book
     </a>
-    <a href="/books/add_book" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a book">
-       Add
+    <a href="{% url 'add_book' %}" data-bs-toggle="tooltip" data-bs-placement="top" title="Add a book">
+        Add
     </a>
-    <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Users">
+    <a href="{% url 'profile' %}" data-bs-toggle="tooltip" data-bs-placement="top" title="Profile">
         Profile
+    </a>
+    <a href="{% url 'logout' %}" data-bs-toggle="tooltip" data-bs-placement="top" title="Logout">
+        &rightarrow;
     </a>
 </nav>

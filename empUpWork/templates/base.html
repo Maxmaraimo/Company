@@ -24,7 +24,22 @@
 
     {% endblock %}
   </head>
+  {% comment %} 
+    1. Menu Nav
+      - Logo
+      - Name
+      - Logged In/Out buttons
+      - Social accounts
+    2. Background - 
+      - Image
+      - Slogan
+      - Links
+    3. Get Navbar into this header of bg-image
+    4. Use font-family Fino
+  {% endcomment %}
   <body>
+
+
     {% if user.is_authenticated %}
       <main id="logged-in-menu">
         <div>
@@ -45,10 +60,17 @@
         </div>
       </main>
     {% else %}
+      <div class="logged-out-navbar">
+        <a style="float: left;" href="{% url 'home_page' %}">🏠</a>
+        
+        <a href="{% url 'registration' %}">Registration</a>
+        <a href="{% url 'login' %}">Login</a>
+      </div>
       <main id="logged-out-menu">
         {% bootstrap_messages %}
         {% block auth_content %}
-          <h1>Login</h1>
+          <h1>Authenticate</h1>
+          <hr />
         {% endblock %}
       </main>
     {% endif %}
