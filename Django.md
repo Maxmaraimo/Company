@@ -747,7 +747,7 @@ class UserForm(forms.Form):
 
 #### Uploading Images
 First we need to install Pillow
-```pip install Pillow```
+```pipenv install Pillow```
 
 Then we need to add the following code to settings.py
 ```python

@@ -2,7 +2,7 @@
 URL configuration for empUpWork project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -19,10 +19,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
-from .views import HomeView
+from .views import home
 
 urlpatterns = [
-    path("", HomeView.as_view(), name="home_page"),
+    path("", home, name="home_page"),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('books/', include('books.urls')),
