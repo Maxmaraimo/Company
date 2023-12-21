@@ -11,11 +11,8 @@
     {% now "Y-m-d" %}
   </p>
   {% with my_name="Ozodbek I'm create this project with my friend Nafal" %}
-    <p>My name is {{ my_name|escape }}</p>
+    <h3>My name is {{ my_name|escape }}</h3>
   {% endwith %}
 
 
-   {% verbatim %}
-    <p>{{ this will not be interpreted as jinja code }}</p>
-   {% endverbatim %}
 {% endblock %}
