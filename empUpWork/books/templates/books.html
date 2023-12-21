@@ -35,7 +35,6 @@
                 <hr />
 
                 {% if book.author.id == request.user.id %}
-                  <a href="{% url 'book_details' book.id %}" class="btn btn-sm col-sm-4 btn-outline-success">View</a>
                   <a href="{% url 'update_book' book.id %}" class="btn btn-sm col-sm-4 btn-outline-primary">Update</a>
                   <a 
                     href="{% url 'delete_book' book.id %}" 
@@ -43,17 +42,15 @@
                     Delete
                   </a>
                 {% else %}
-                  <a href="{% url 'book_details' book.id %}" 
-                    class="btn btn-sm col-sm-6 btn-info"
-                  >
-                    View
-                  </a>
+                <a href="{% url 'book_details' book.id %}" class="btn btn-sm col-sm-4 btn-outline-success">View</a>
                   <a href="{% url 'add_to_wishlist' book.id %}" 
                     class="btn btn-sm col-sm-6 btn-success"
                   >
                     Add to wishlist
                   </a>
                 {% endif %}
+            <p>{{ book.author }}</p>
+
               </div>
               {% comment %}
             {% endif %} {% endcomment %}

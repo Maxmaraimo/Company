@@ -1,5 +1,10 @@
+from books.models import Books
 from books.usecases import *
+from books.usecases import get_saved_books
+from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
+
+from .usecases import *
 
 
 class HomeView(TemplateView):
@@ -17,3 +22,19 @@ class HomeView(TemplateView):
         })
         # Do something
         return context
+
+
+def wishlist_view(request):
+    context = {
+        "books": get_saved_books(request)
+    }
+    return render(request, 'wishlist.html', context)
+
+
+def delete_from_wl(request, book_id: int):
+    book = Books.objects.filter(id=book_id).first()
+    delete_book_from_wl(request, book_id)
+
+    messages.success(
+        request, f"Successfully deleted {book.title} from wishlist")
+    return redirect('wishlist_view')
