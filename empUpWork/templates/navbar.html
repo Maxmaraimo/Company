@@ -419,7 +419,6 @@
         
         <div id="nav-footer-titlebox"><a id="nav-footer-title" href="{% url 'profile' %}">{{ user.username }}</a><span id="nav-footer-subtitle">
   
-          {% if user_status.is_superuser %}Superuser{% elif user_status.is_staff and not user_status.is_superuser %}Staff{% elif user_status.is_active %}User{% endif %}
   
         </span></div>
         <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
