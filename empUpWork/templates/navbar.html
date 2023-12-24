@@ -387,7 +387,7 @@
       <hr/>
     </div>
     <div id="nav-content">
-      <div class="nav-button"><i class="fas fa-images"></i><span><a href="{% url 'books_view' %}">Work</a></span></div>
+      <div class="nav-button"><i class="fas fa-images"></i><span><a href="{% url 'books_view' %}">Works</a></span></div>
       <div class="nav-button"><i class="fas fa-thumbtack"></i><span><a href="{% url 'add_book' %}">Add a job</a></span></div>
       <hr/>
       <div class="nav-button"><i class="fas fa-magic"></i><span><a href="{% url 'logout' %}">logout</a></span></div>
@@ -411,16 +411,16 @@
     </span>
   </div>
 
-      <div id="nav-content-highlight"></div>
+    <div id="nav-content-highlight"></div>
     </div>
     <input id="nav-footer-toggle" type="checkbox"/>
     <div id="nav-footer">
       <div id="nav-footer-heading">
-        
-        <div id="nav-footer-titlebox"><a id="nav-footer-title" href="{% url 'profile' %}">{{ user.username }}</a><span id="nav-footer-subtitle">
-  
-  
-        </span></div>
+        <div id="nav-footer-titlebox">
+            <a id="nav-footer-title" href="{% url 'profile' %}">{{ user.username }}</a>
+            <span id="nav-footer-subtitle">
+        </span>
+    </div>
         <label for="nav-footer-toggle"><i class="fas fa-caret-up"></i></label>
       </div>
       <div id="nav-footer-content">
