@@ -79,14 +79,14 @@ main#logged-in-menu > div:last-child {
 
 .logged-out-navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: #f1f1ff;
 }
 .logged-out-navbar a {
     text-decoration: none;
     padding: 10px 20px;
-    color: snow;
+    color: black;
     float: right;
 }
 .logged-out-navbar a:hover {
-    background-color: green;
+    background-color: #666;
 }

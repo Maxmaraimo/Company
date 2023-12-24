@@ -24,30 +24,13 @@
 
     {% endblock %}
   </head>
-  {% comment %} 
-    1. Menu Nav
-      - Logo
-      - Name
-      - Logged In/Out buttons
-      - Social accounts
-    2. Background - 
-      - Image
-      - Slogan
-      - Links
-    3. Get Navbar into this header of bg-image
-    4. Use font-family Fino
-  {% endcomment %}
+  {% comment %}1. Menu Nav - Logo - Name - Logged In/Out buttons - Social accounts 2. Background - - Image - Slogan - Links 3. Get Navbar into this header of bg-image 4. Use font-family Fino{% endcomment %}
   <body>
-
-
     {% if user.is_authenticated %}
       <main id="logged-in-menu">
         <div>
           {% include 'navbar.html' %}
-          <a id="wishlist" href="{% url 'wishlist_view' %}" 
-            data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-            🧺
-          </a>
+          <a id="wishlist" href="{% url 'wishlist_view' %}" data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">🧺</a>
         </div>
         <div>
           <div id="messages">
@@ -65,8 +48,13 @@
       </main>
     {% else %}
       <div class="logged-out-navbar">
-        <a style="float: left;" href="{% url 'home_page' %}">🏠</a>
-        
+        <a style="
+          float: left;
+          color: green;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+         " href="{% url 'home_page' %}">empUpWork</a>
+
         <a href="{% url 'registration' %}">Registration</a>
         <a href="{% url 'login' %}">Login</a>
       </div>
@@ -74,6 +62,7 @@
         {% bootstrap_messages %}
         {% block auth_content %}
           <h1>Authenticate</h1>
+
           <hr />
         {% endblock %}
       </main>
