@@ -61,7 +61,7 @@ class BookUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
 def delete_book(request, book_id: int):
     book = Books.objects.get(id=book_id)
     book.delete()
-    messages.success(request, 'Book deleted successfully!')
+    messages.success(request, 'Work deleted successfully!')
     return redirect('books_view')
 
 
@@ -72,8 +72,8 @@ def add_to_wishlist(request, book_id: int):
 
     if not added:
         messages.success(
-            request, f"Successfully added a book {book.title.upper()} into wishlist!")
+            request, f"Successfully added a work {book.title.upper()} into wishlist!")
     else:
         messages.warning(
-            request, f"The book {book.title.upper()} already exists in your wishlist!")
+            request, f"The work {book.title.upper()} already exists in your wishlist!")
     return redirect('books_view')

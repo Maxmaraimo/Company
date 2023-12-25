@@ -30,8 +30,8 @@ class NullPriceException(Exception):
 
 
 class Books(models.Model):
-    title: str = models.CharField(max_length=50)
-    description: str = models.TextField()
+    title: str = models.CharField(max_length=100)
+    description: str = models.TextField(max_length=500)
     author: User = models.ForeignKey(User, on_delete=models.SET_NULL,
                                      null=True, blank=True)
     genre: str = models.CharField(max_length=25)
@@ -66,3 +66,5 @@ class Books(models.Model):
         if image_url != '/media/books/book_default_img.png':
             os.remove(self.image.path)
         super().delete(*args, **kwargs)
+
+        
