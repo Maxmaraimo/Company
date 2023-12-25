@@ -22,15 +22,57 @@
 
     {% block style %}
 
+    <style>
+      .dropdown-menu {
+        width: 120px;
+        height: 20px;
+      }
+    </style>
     {% endblock %}
   </head>
   {% comment %}1. Menu Nav - Logo - Name - Logged In/Out buttons - Social accounts 2. Background - - Image - Slogan - Links 3. Get Navbar into this header of bg-image 4. Use font-family Fino{% endcomment %}
   <body>
+    <nav>
+      <div class="left">
+        {% comment %} <br /> {% endcomment %}
+        <a href=""><b>empUpWork</b></a>
+      </div>
+      <div class="right">
+        <a href="{% url 'home_page' %}" style="color: rgb(14, 183, 104);">HOME</a>
+        <a href="">ABOUT</a>
+        <a href="{% url 'books_view' %}">JOBS</a>
+        {% comment %} <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
+          <div class="dropdown-menu">
+              <a href="" class="dropdown-item">Job List</a>
+              <a href="" class="dropdown-">Job Detail</a>
+          </div>
+      </div> {% endcomment %}
+          {% comment %} <div class="dropdown">
+            <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Search job</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="background-color: snow;color: black;">
+              <li>
+                <a class="dropdown-item" href="">Online</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="">offline</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="">etc.</a>
+              </li>
+            </ul>
+          </div> {% endcomment %}
+        <a href="">PAGES</a>
+        <a href="">CONTACT</a>
+        <a href=""></a>
+        <button>Post A Job</button>
+      </div>
+    </nav>
     {% if user.is_authenticated %}
       <main id="logged-in-menu">
         <div>
           {% include 'navbar.html' %}
-          <a id="wishlist" href="{% url 'wishlist_view' %}" data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">🧺</a>
+          {% comment %} <a id="wishlist" href="{% url 'wishlist_view' %}" data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">🧺</a> {% endcomment %}
         </div>
         <div>
           <div id="messages">
