@@ -87,6 +87,6 @@ main#logged-in-menu > div:last-child {
     color: black;
     float: right;
 }
-.logged-out-navbar a:hover {
-    background-color: #666;
-}
+/* .logged-out-navbar a:hover {
+    background-color: #999;
+} */
