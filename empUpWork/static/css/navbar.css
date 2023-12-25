@@ -32,13 +32,21 @@ nav .right {
 nav .right a:hover {
     color: rgb(14, 183, 104);
 }
-nav .right  button {
+nav .right button {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 17px;
     border: none;
     background-color: rgb(14, 183, 104);
-    color: snow;
+    color: white;
     width: 170px;
     height: 70px;
     margin: -10px -25px;
+}
+nav .right  button a {
+    text-decoration: none;
+    color: white;
+}
+nav .right  button a:hover {
+    color: white;
+
 }

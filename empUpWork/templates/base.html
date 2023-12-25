@@ -9,7 +9,7 @@
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
 
     {% block title %}
-      <title>AC Django Project</title>
+      <title>empUpWork company</title>
     {% endblock %}
 
     {% bootstrap_css %}
@@ -27,6 +27,7 @@
         width: 120px;
         height: 20px;
       }
+
     </style>
     {% endblock %}
   </head>
@@ -39,7 +40,7 @@
       </div>
       <div class="right">
         <a href="{% url 'home_page' %}" style="color: rgb(14, 183, 104);">HOME</a>
-        <a href="">ABOUT</a>
+        <a href="{% url 'wishlist_view' %}">ABOUT</a>
         <a href="{% url 'books_view' %}">JOBS</a>
         {% comment %} <div class="dropdown">
           <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
@@ -62,10 +63,10 @@
               </li>
             </ul>
           </div> {% endcomment %}
-        <a href="">PAGES</a>
-        <a href="">CONTACT</a>
+        <a href="{% url 'add_book' %}">PAGES</a>
+        <a href="{% url 'logout' %}">CONTACT</a>
         <a href=""></a>
-        <button>Post A Job</button>
+        <button class="button"><a href="{% url 'profile' %}">Post A Job</a></button>
       </div>
     </nav>
     {% if user.is_authenticated %}
