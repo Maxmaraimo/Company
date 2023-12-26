@@ -97,9 +97,18 @@
       border-radius: 15px;
       text-align: center;
     }
-    .ch_2 h1 {
+    .ch_2 h1, a {
       font-family: Georgia, 'Times New Roman', Times, serif;  
       font-size: 20px;
+    }
+    .ch_2 h1, .profile {
+      text-decoration: none;
+      color: snow;
+      margin: 50px 40px;
+    }
+    .ch_2 .profile:hover {
+      color: snow;
+      text-decoration: underline;
     }
   </style>
 {% endblock %}
@@ -205,7 +214,7 @@
 
     {% comment %} {% endcomment %}
     <div class="ch_2">
-      <h1>{{ user.username }} profile</h1>
+      <h1><a class="profile" href="{% url 'profile' %}">{{ user.username }} profile</a></h1>
     </div>
   </div>
 {% endblock %}
