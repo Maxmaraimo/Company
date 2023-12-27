@@ -8,6 +8,10 @@
 
 {% block style %}
   <style>
+    {% comment %} #wishlist-page {
+      background-color: red;
+      border: 1px solid green;
+    } {% endcomment %}
     .card {
       overflow: hidden;
     }
@@ -33,6 +37,11 @@
         font-size: 1.2em;
     }
     a:hover { color: snow; }
+
+    #card_stl {
+      border: 1px solid green;
+      width: 470px;
+    }
   </style>
 {% endblock %}
 
@@ -48,7 +57,7 @@ created
   <div id="wishlist-page">
     {% if books|length > 0 %}
       {% for book in books %}
-        <div class="card bg-dark text-light mb-3">
+        <div class="card bg-light text-dark mb-3" id="card_stl">
           <div class="card-header">
             <h3 class="card-title">{{ book.title }}</h3>
             <span id="delete-book-from-wl">
