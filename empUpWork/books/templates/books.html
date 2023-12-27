@@ -104,7 +104,7 @@
     .ch_2 h1, .profile {
       text-decoration: none;
       color: snow;
-      margin: 20px 40px;
+      margin: 20px 30px;
     }
     .ch_2 .profile:hover {
       color: snow;
@@ -139,11 +139,29 @@
     .ch_2 .logout:hover {
       text-decoration: underline;
     }
+    .went  {
+      display: grid;
+      grid-template-columns: repeat(2,70px);
+      gap: 5px;
+      margin: -20px 340px;
+    }
+    .went a {
+      color: rgb(14, 183, 104);
+      text-decoration: none;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    }
+    .went a:hover {
+      color: green;
+      text-decoration: underline;
+    }
+    .went hr {
+      margin: 5px -40px;
+    }
   </style>
 {% endblock %}
 
 {% block content %}
-  <br />
   <br />
   <h1>Jobs you might like</h1>
   <form class="d-flex">
@@ -200,6 +218,17 @@
       <br />
       <div class="container-fluid">
         <div class="all-books">
+          {% comment %} <h1>wishlist</h1> {% endcomment %}
+          <div class="went">
+            <div>
+              <p><a href="{% url 'books_view' %}" style="text-decoration: underline;">work</a> </p>
+            </div>
+            <div>
+              <p><a href="{% url 'wishlist_view' %}">wishlist</a> </p>
+            </div>
+            <hr>
+          </div>
+          <br><br>
           {% if object_list %}
             {% for book in object_list %}
               <div class="book">
