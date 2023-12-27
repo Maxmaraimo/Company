@@ -42,6 +42,9 @@ nav .right  .button {
     height: 70px;
     margin: -10px -25px;
 }
+.button {
+  color: white;
+}
 nav .right  .button a:hover {
   color: snow;
 }
