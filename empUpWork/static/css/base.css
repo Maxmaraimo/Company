@@ -79,7 +79,8 @@ main#logged-in-menu > div:last-child {
 
 .logged-out-navbar {
     overflow: hidden;
-    background-color: #f1f1ff;
+    background-color: white;
+    border: 1px solid gray;
 }
 .logged-out-navbar a {
     text-decoration: none;

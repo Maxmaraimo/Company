@@ -104,11 +104,29 @@
     .ch_2 h1, .profile {
       text-decoration: none;
       color: snow;
-      margin: 50px 40px;
+      margin: 20px 40px;
     }
     .ch_2 .profile:hover {
       color: snow;
       text-decoration: underline;
+    }
+    hr {
+      width: 230px;
+      box-shadow: 5px 5px 8px green, -5px -5px 8px orangered;
+      margin: 0 auto;
+    }
+    .select-label {
+      text-align: left;
+      margin: 10px -110px;
+    }
+    .select-label span {
+      margin: 10px 1px;
+    }
+    .ch_2 .me {
+      font-family: Georgia, 'Times New Roman', Times, serif;  
+      font-size: 15px;
+      margin: 10px 20px;
+      text-align: left;
     }
   </style>
 {% endblock %}
@@ -215,6 +233,17 @@
     {% comment %} {% endcomment %}
     <div class="ch_2">
       <h1><a class="profile" href="{% url 'profile' %}">{{ user.username }} profile</a></h1>
+      <hr>
+      <div class="select-wrapper">
+        <label for="type" class="select-label"><span>Вы:</span></label>
+        <select id="type" name="type">
+          <option value="freelancer">Freelancer</option>
+          <option value="client">Client</option>
+        </select>
+      </div>
+      <h2 class="me">Me: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi natus nesciunt, consequuntur officiis assumenda vitae culpa saepe.</h2>
+      <hr>
+
     </div>
   </div>
 {% endblock %}
