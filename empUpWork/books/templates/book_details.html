@@ -9,6 +9,16 @@
 {% block link %}
 {% endblock %}
 
+{% block style %}
+<style>
+  .container {
+    background-image: linear-gradient(to right, snow, lightgray);
+    border-radius: 0 20px 20px 20px;
+    padding: 50px;
+    border: 1px solid green;
+  }
+</style>
+{% endblock %}
 {% comment %} 
 author
 genre
@@ -17,13 +27,15 @@ price
 created {% endcomment %}
 
 {% block content %}
-    <h1>{{ object.title }}</h1>
-    <p>{{ object.description }}</p>
-    <p>{{ object.author }}</p>
-    <p>{{ object.genre }}</p>
-    <p>{{ object.is_available }}</p>
-    <p>💲 {{ object.price }}</p>
-    <p>{{ object.created }}</p>
+<div class="container">
+  <h1>{{ object.title }}</h1>
+  <p>{{ object.description }}</p>
+  <p>{{ object.author }}</p>
+  <p>{{ object.genre }}</p>
+  <p>{{ object.is_available }}</p>
+  <p>💲 {{ object.price }}</p>
+  <p>{{ object.created }}</p>  
+</div>
 
 
 {% endblock %}
