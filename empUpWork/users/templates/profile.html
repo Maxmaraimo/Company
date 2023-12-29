@@ -22,6 +22,27 @@
   .main select {
     border: 1px solid green;
   }
+
+  .back {
+    float: right;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 20px;
+
+  }
+  .back a {
+    color: red;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .back:hover {
+    background-color: red;
+    color: snow;
+  }
+  .back a:hover {
+    color: white;
+  }
 </style>
 {% endblock %}
 
@@ -29,7 +50,9 @@
 {% comment %} <br><br><br> {% endcomment %}
 <br>
 <div class="main">
-  <h1>{{ user.username }} profile
+  <h1>{{ user.username }} profile  
+    <span class="back"><a href="{% url 'books_view' %}">→</a></span>
+  </h1>
     <div class="mb-5" style="font-size: 17px;">
       <div class="select-wrapper">
         <label for="type" class="select-label">Вы:</label>
@@ -39,7 +62,7 @@
         </select>
       </div>
     </div>
-  </h1>
+
 
   <form method="POST"
         enctype="multipart/form-data">
