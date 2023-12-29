@@ -37,12 +37,12 @@ nav .right  .button {
     font-size: 17px;
     border: none;
     background-color: rgb(14, 183, 104);
-    color: snow;
+    color: white;
     width: 170px;
     height: 70px;
     margin: -10px -25px;
 }
-.button {
+button {
   color: white;
 }
 nav .right  .button a:hover {
