@@ -288,7 +288,10 @@ created
                 <p class="card-genre">{{ book.genre }}</p>
                 <p class="card-is_available">{{ book.is_available }}</p>
                 <p class="card-price">💲 {{ book.price }}</p>
-                <p class="card-created">{{ book.created }}</p>
+                <p class="card-created">{{ book.created }}
+                  <a href="{% url 'book_details' book.id %}" class="btn btn-sm col-sm-4 btn-outline-success">Apply Now</a>
+
+                </p>
               </div>
             </div>
           {% endfor %}
