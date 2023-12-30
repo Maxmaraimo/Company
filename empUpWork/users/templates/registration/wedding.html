@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+  <title>Wedding</title>
+{% endblock %}
+
+{% block style %}
+<style>
+  .wedding_h1 {
+    text-align: center;
+    margin: 10px 20px;
+    color: rgb(14, 183, 104);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .container {
+    background-color: white;
+    width: 1200px;
+    height: 450px;
+    border: 0.3px solid rgb(14, 183, 104);
+    margin: 5px 20px;
+    border-radius: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .first img {
+    margin: 7px -5px;
+    border-radius: 0 20px 20px 20px;
+
+  }
+  .second {
+    margin: 30px 20px;
+  }
+  .order {
+    border: 2px solid rgb(14, 183, 104);
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    margin: 10px 140px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    padding: 4px;
+    width: 230px;
+  }
+  .order:hover {
+    background-color: rgb(14, 183, 104);
+    color: white;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+{% comment %} <br><br><br> {% endcomment %}
+<br>
+<h1 class="wedding_h1">Wedding</h1>
+<div class="container">
+<div class="first">
+  <img src="/media/wedding/test.png" width="540px" height="435px" alt="" />
+
+</div>
+<div class="second">
+  <h3>RATANA</h3>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio reprehenderit dolores quibusdam, laboriosam asperiores vel sint odit! Porro, voluptas nisi. Incidunt laboriosam cum voluptatibus facere delectus fuga doloremque similique, nostrum perferendis nesciunt sunt vero assumenda omnis voluptates eaque dicta iste animi ipsa eveniet mollitia enim, praesentium distinctio? Suscipit consectetur voluptatem qui accusamus nihil molestias in soluta, fugiat cupiditate fugit repudiandae magni ut? Asperiores quam eum reprehenderit eveniet quibusdam obcaecati praesentium?
+  </p>
+  <b>$1200</b>
+  {% comment %} <br><br> {% endcomment %}
+  <h5>Samarqand Charhin 12A Uy</h5>
+  <h6>1000 people</h6>
+  <button class="order">Order</button>
+</div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
