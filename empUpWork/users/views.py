@@ -29,6 +29,24 @@ def registration(request):
     context = {'form': UserForm()}
     return render(request, 'registration/create_user.html', context)
 
+def wedding(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            messages.success(request,
+                             f"Welcome to our site {username}!")
+            form.save(commit=True)
+            return redirect('login')
+        else:
+            messages.error(request,
+                           "Please correct the errors below.")
+            context = {'form': form}
+            return render(request, 'registration/wedding.html', context)
+
+    context = {'form': UserForm()}
+    return render(request, 'registration/wedding.html', context)
+
 
 @login_required
 def profile(request):
