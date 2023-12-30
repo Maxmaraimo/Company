@@ -27,7 +27,9 @@
         width: 120px;
         height: 20px;
       }
-
+      .button {
+        color: white;
+      }
     </style>
     {% endblock %}
   </head>
@@ -63,7 +65,7 @@
               </li>
             </ul>
           </div> {% endcomment %}
-        <a href="{% url 'wishlist_view' %}">PAGES</a>
+        <a href="{% url 'wedding' %}">PAGES</a>
         <a href="{% url 'logout' %}">CONTACT</a>
         <a href=""></a>
         <button class="button" style="color: white;">
@@ -129,3 +131,11 @@
     </script>
   </body>
 </html>
+
+{% comment %} <details>
+  <summary>
+    <a href="{% url 'books_view' %}">JOBS</a>
+  </summary>
+  <p>Online</p>
+  <p>offline</p>
+</details> {% endcomment %}
