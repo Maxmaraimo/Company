@@ -13,8 +13,9 @@
 {% block style %}
   <style>
     .all-books {
-      background-image: linear-gradient(to right, snow, lightgray);
+      background-image: linear-gradient(to right, snow, white);
       border-radius: 0 20px 20px 20px;
+      margin: -14px 0px;
       padding: 50px;
       border: 1px solid green;
     }
@@ -166,6 +167,9 @@
     .went hr {
       margin: 5px -40px;
     }
+    .ch_1 .margs {
+      margin: -0px 10px;
+    }
   </style>
 {% endblock %}
 
@@ -180,7 +184,10 @@
 
   <div class="leftss">
     <div class="ch_1">
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="margs">
+
+      
+      <div  id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -219,11 +226,9 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
-      {% comment %} {% endcomment %}
-
+</div>
       <br />
-      <br />
+
       <div class="container-fluid">
         <div class="all-books">
           {% comment %} <h1>wishlist</h1> {% endcomment %}
