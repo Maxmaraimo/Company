@@ -42,10 +42,10 @@ def wedding(request):
             messages.error(request,
                            "Please correct the errors below.")
             context = {'form': form}
-            return render(request, 'registration/wedding.html', context)
+            return render(request, 'registration/temp/wedding.html', context)
 
     context = {'form': UserForm()}
-    return render(request, 'registration/wedding.html', context)
+    return render(request, 'registration/temp/wedding.html', context)
 
 
 @login_required
