@@ -4,19 +4,178 @@
   <title>Registration</title>
 {% endblock %}
 
-{% block auth_content %}
-  <div class="container">
-    <h1>Registration</h1>
+{% block style %}
+<style>
+  .end {
+    background-color: rgb(34, 56, 56);
+  }
 
+  .end .ch-end {
+    display: grid;
+    grid-template-columns: repeat(5, 320px);
+  }
+
+  .end div {
+    margin: 40px 50px;
+  }
+
+  .end b,
+  h4,
+  p {
+    cursor: pointer;
+
+  }
+
+  .end h4 {
+    color: snow;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .end b {
+    text-decoration: none;
+    color: lightslategray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    margin: 50px 5px;
+  }
+
+  hr {
+    box-shadow: 1px 1px 1px gray, -1px -1px 1px rgb(46, 45, 45);
+    width: 1200px;
+  }
+
+  .grids {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: -50px 20px;
+  }
+
+  .grids .first {
+    color: lightslategray;
+  }
+
+  .grids .second {
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    color: snow;
+  }
+
+  .container {
+    background-image: linear-gradient(to right, snow, white); 
+    border-radius: 20px 20px 20px 20px;
+    padding: 50px;
+    border: 2px solid lightgray;
+    width: 950px;
+  }
+  h1 {
+    text-align: center;
+  }
+  .apple {
+    border: 2px slice black;
+    border-radius: 18px;
+    background-color: snow;
+    color: black;
+    width: 500px;
+    padding: 3px;
+    margin: 10px 180px;
+  }
+  .google {
+    border: 2px slice black;
+    border-radius: 18px;
+    background-color: blue;
+    color: snow;
+    width: 500px;
+    padding: 3px;
+    margin: 10px 180px;
+  }
+  hr{
+    width: 220px;
+  }
+  .grid_hr {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 10px 210px;
+  }
+</style>
+{% endblock %}
+
+{% block auth_content %}
+<br>
+  <div class="container">
+    <h1>Sign up to hire talent</h1>
+
+    <button class="apple">Continue with Apple</button><br>
+    <button class="google">Continue with Google</button>
+    <div class="grid_hr">
+      <div><hr></div>
+      <div><pre> or </pre></div>
+      <div><hr></div>
+    </div>
     {% include "form_snippets.html" with form=form btn_text='Register' %}
 
-    <hr>
-    <div class="mb-5">
-        <small class="text-muted">
-            Already have an account? 
+    <div class="mb-5"><br>
+      <small class="text-muted">
+        Already have an account? 
             <a href="{% url 'login' %}">Login</a> 
         </small>
+      </div>
+      <div class="input-group">
+        <label for="location">Location</label>
+        <select name="location" id="location">
+          <option value="US">United States</option>
+          <option value="UK">United Kingdom</option>
+          <option value="CA">Canada</option>
+          <option value="">Other</option>
+        </select>
+      </div>
+  </div>
+
+  <br><br><br><br><br>
+
+  <div class="end">
+    <div class="ch-end">
+      <div class="company">
+        <h4>Company</h4>
+        <b>About Us</b><br>
+        <b>Contact Us</b><br>
+        <b>Our Services</b><br>
+        <b>Primary Policy</b><br>
+        <b>Terms & Condition</b>
+      </div>
+      <div class="quick-links">
+        <h4>Quick Links</h4>
+        <b>About Us</b><br>
+        <b>Contact Us</b><br>
+        <b>Our Services</b><br>
+        <b>Primary Policy</b><br>
+        <b>Terms & Condition</b>
+      </div>
+      <div class="contact">
+        <h4>Contact</h4>
+        <b>💡 Samarqand Shaxar</b><br>
+        <b>📞 +998 (90) 477 28 09</b><br>
+        <b>📧 empupwork16@gmail.com</b>
+      </div>
+      <div class="newsletter">
+        <h4>Newsletter</h4>
+        <b>Dolor amet sit justo amet elitr clita ipsum elitr est.</b>
+      </div>
     </div>
+    <hr>
+    <div class="grids">
+      <div class="first">
+        <p>© EmpUpWork, All Right Reserved. Designed By Django & framework</p>
+      </div>
+      <div class="second">
+        <p>Home</p>
+        <p>Cookie</p>
+        <p>Help</p>
+        <p>FQAs</p>
+      </div>
+    </div>
+
   </div>
 {% endblock %}
 
