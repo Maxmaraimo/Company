@@ -69,7 +69,7 @@
         <a href="{% url 'logout' %}">CONTACT</a>
         <a href=""></a>
         <button class="button" style="color: white;">
-          <a href="{% url 'add_book' %}">Post A Job</a>
+          <a href="{% url 'add_book' %}">Post A Job →</a>
         </button>
       </div>
     </nav>
@@ -99,7 +99,6 @@
           float: left;
           color: green;
           font-family: Verdana, Geneva, Tahoma, sans-serif;
-
          " href="{% url 'home_page' %}">empUpWork</a>
 
         <a href="{% url 'registration' %}">Sign up</a>
@@ -132,10 +131,12 @@
   </body>
 </html>
 
-{% comment %} <details>
+{% comment %} 
+<details>
   <summary>
     <a href="{% url 'books_view' %}">JOBS</a>
   </summary>
   <p>Online</p>
   <p>offline</p>
-</details> {% endcomment %}
+</details> 
+{% endcomment %}
