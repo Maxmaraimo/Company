@@ -13,7 +13,7 @@ from .usecases import *
 class AddBookView(CreateView):
     modal = Books
     form_class = BookForm
-    template_name = 'add_book.html'
+    template_name = 'add_work.html'
     success_url = '/books/'
 
     def post(self, *args, **kwargs):
@@ -27,7 +27,7 @@ class AddBookView(CreateView):
 
 class BooksListView(ListView):
     modal = Books
-    template_name = 'books.html'
+    template_name = 'jobs.html'
 
     def get_queryset(self):
         return Books.objects.all()
@@ -35,7 +35,7 @@ class BooksListView(ListView):
 
 class BookDetailsView(DetailView):
     modal = Books
-    template_name = 'book_details.html'
+    template_name = 'jobs_details.html'
 
     def get_queryset(self):
         return Books.objects.filter(id=self.kwargs['pk'])
@@ -44,7 +44,7 @@ class BookDetailsView(DetailView):
 class BookUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     modal = Books
     form_class = BookForm
-    template_name = 'update_book.html'
+    template_name = 'update_work.html'
     success_url = '/books/'
 
     def get_queryset(self):
