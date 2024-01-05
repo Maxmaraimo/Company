@@ -8,6 +8,9 @@
 
 {% block style %}
 <style>
+  * {
+    transition: 0.7s;
+  }
   .main {
     background: linear-gradient(to right, snow, white);
     padding: 50px;
@@ -39,7 +42,7 @@
     background-color: red;
     color: snow;
   }
-  .back a:hover {
+  .back:hover a {
     color: white;
   }
   .user_profile input {
@@ -54,7 +57,6 @@
   }
   .user_profile .social a {
     text-decoration: none;
-    {% comment %} color: black; {% endcomment %}
   }
   .user_profile .social button {
     margin: 10px 15px;
@@ -69,6 +71,12 @@
   .user_profile .social .github a {
     text-decoration: none;
     color: black;
+  }
+  .user_profile .social .github:hover {
+    background-color: black;
+  }
+  .user_profile .social .github:hover a {
+    color: snow;
   }
 
   .user_profile .social .twitter {
@@ -94,6 +102,10 @@
     text-decoration: none;
     color: blue;
   }
+  {% comment %} #update {
+    padding: 7px;
+    width: 120px;
+  } {% endcomment %}
 </style>
 {% endblock %}
 
@@ -145,7 +157,7 @@
       
     </div>
 <br>
-    <button class="btn btn-outline-success" type="submit">Update</button>
+    <button class="btn btn-outline-success" type="submit" id="update">Update</button>
   </form>
 </div>
 {% endblock %}
