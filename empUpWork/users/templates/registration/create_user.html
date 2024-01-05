@@ -64,9 +64,8 @@
 
   .container {
     background-image: linear-gradient(to right, snow, white); 
-    border-radius: 20px 20px 20px 20px;
     padding: 50px;
-    border: 2px solid lightgray;
+    box-shadow: 2px 2px 4px lightgray, -2px -2px 3px lightslategray;
     width: 950px;
   }
   h1 {
@@ -98,6 +97,10 @@
     grid-template-columns: repeat(3,1fr);
     margin: 10px 210px;
   }
+  button {
+    width: 850px;
+    padding: 7px;
+  }
 </style>
 {% endblock %}
 
@@ -113,7 +116,7 @@
       <div><pre> or </pre></div>
       <div><hr></div>
     </div>
-    {% include "form_snippets.html" with form=form btn_text='Register' %}
+    {% include "form_snippets.html" with form=form btn_text='Register' %} 
 
     <div class="mb-5"><br>
       <small class="text-muted">
@@ -121,6 +124,8 @@
             <a href="{% url 'login' %}">Login</a> 
         </small>
       </div>
+
+
       <div class="input-group">
         <label for="location">Location</label>
         <select name="location" id="location">
