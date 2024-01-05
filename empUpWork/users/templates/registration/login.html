@@ -85,7 +85,7 @@
     margin: 10px 50px;
   }
   .google {
-    border: 2px slice black;
+    border: 0.5px slice black;
     border-radius: 18px;
     background-color: blue;
     color: snow;
@@ -112,7 +112,7 @@
     color: gray;
   }
   .sign_up {
-    width: 180px;
+    width: 190px;
     padding: 5px;
     border-radius: 20px;
     background-color: snow;
@@ -122,22 +122,46 @@
   .sign_up a {
     text-decoration: none;
     color: green;
-    
+  }
+  .sign_up:hover {
+    background-color: green;
+  }
+  .sign_up:hover a {
+    color: white;
   }
   .empUpWork {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: green;
     font-size: 18px;
   }
+  {% comment %} .org button {
+    background-color: greenyellow;
+    border: none;
+    color: white;
+    width: 450px;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    color: snow;
+  }
+  .org button:hover {
+    background-color: green;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    color: snow;
+    border: none;
+    color: white;
+    width: 450px;
+  } {% endcomment %}
 </style>
 {% endblock %}
 
 {% block auth_content %}
 <br>
   <div class="container">
-    <h1>Log in to <span class="empUpWork">empUpWork</span></h1>
+    <div class="org">
 
-    {% include "form_snippets.html" with form=form btn_text='Login' %}
+      <h1>Log in to <span class="empUpWork">empUpWork</span></h1>
+7
+      {% include "form_snippets.html" with form=form btn_text='Login' %}
+    </div>
 
     <div class="grid_hr">
       <div><hr></div>
