@@ -97,10 +97,24 @@
     grid-template-columns: repeat(3,1fr);
     margin: 10px 210px;
   }
-  button {
+
+  .org button {
+    background-color: greenyellow;
+    border: none;
+    color: white;
     width: 850px;
     padding: 7px;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    color: snow;
   }
+  .org button:hover {
+    background-color: green;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    color: snow;
+    border: none;
+    color: white;
+    width: 850px;
+  } 
 </style>
 {% endblock %}
 
@@ -116,7 +130,10 @@
       <div><pre> or </pre></div>
       <div><hr></div>
     </div>
-    {% include "form_snippets.html" with form=form btn_text='Register' %} 
+    <div class="org">
+
+      {% include "form_snippets.html" with form=form btn_text='Register' %} 
+    </div>
 
     <div class="mb-5"><br>
       <small class="text-muted">
