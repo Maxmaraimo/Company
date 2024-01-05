@@ -29,3 +29,7 @@ _________________________________________________
 
 ![Twitter Follow](https://img.shields.io/twitter/follow/0MAVM0?label=Follow&style=social)
 _________________________________________________
+_________________________________________________
+```
+Maxmaraimov Ozodbek Shuxratov
+```
