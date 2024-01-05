@@ -148,3 +148,7 @@ Please note that PythonAnywhere doesn't support Pipfile.lock, so you might need 
 
 `pipenv lock -r > requirements.txt` - is outdated
 🎯 New version is: `pipenv run pip freeze > requirements.txt`
+_________________________________________________
+```
+Maxmaraimov Ozodbek Shuxratov
+```

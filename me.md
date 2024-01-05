@@ -23,6 +23,7 @@ Let's connect and share our knowledge! You can find me on:
 
 ## 📈 Projects
 Stay tuned for exciting projects! Currently diving into JavaScript.
+_________________________________________________
 
 ![GitHub followers](https://img.shields.io/github/followers/0MAVM0?label=Follow&style=social)
 
