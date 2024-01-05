@@ -2001,3 +2001,8 @@ Afterwards, we can use breakpoints to stop anywhere
 and see what is going on in our code if there is smth happened
 RU: После этого мы можем использовать точки останова, чтобы остановиться где угодно
 и посмотреть, что происходит в нашем коде, если что-то произошло
+
+_________________________________________________
+```
+Maxmaraimov Ozodbek Shuxratov
+```
