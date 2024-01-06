@@ -14,7 +14,7 @@ class AddBookView(CreateView):
     modal = Books
     form_class = BookForm
     template_name = 'add_work.html'
-    success_url = '/books/'
+    success_url = '/jobs/'
 
     def post(self, *args, **kwargs):
         form = self.get_form()
@@ -45,7 +45,7 @@ class BookUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     modal = Books
     form_class = BookForm
     template_name = 'update_work.html'
-    success_url = '/books/'
+    success_url = '/jobs/'
 
     def get_queryset(self):
         return Books.objects.filter(id=self.kwargs['pk'])
