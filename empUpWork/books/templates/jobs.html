@@ -168,6 +168,19 @@
     .ch_1 .margs {
       margin: -0px 10px;
     }
+    .save {
+      float: right;
+      background-color: rgba(172, 255, 47, 0.575);
+      padding: 7px;
+      border-radius: 50%;
+      {% comment %} margin: -155px -15px; {% endcomment %}
+    }
+    .save:hover {
+      background-color: greenyellow;
+    }
+    .save a {
+      text-decoration: none;
+    }
   </style>
 {% endblock %}
 
@@ -183,8 +196,6 @@
   <div class="leftss">
     <div class="ch_1">
       <div class="margs">
-
-      
       <div  id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -228,7 +239,7 @@
       <br />
       <div class="container-fluid">
         <div class="all-books">
-          {% comment %} <h1>wishlist</h1> {% endcomment %}
+          
           <div class="went">
             <div>
               <p><a href="{% url 'books_view' %}" style="text-decoration: underline;">work</a> </p>
@@ -244,9 +255,15 @@
               <div class="book">
                 <div class="book-header">
                   {% comment %}to filter created we can use | date:'d-m-Y' or | timesince or | timeuntil{% endcomment %}
-                  <small class="text-secondary">Created at: {{ book.created|date:'d-m-Y' }}</small>
+                  <small class="text-secondary">Created at: {{ book.created|date:'d-m-Y' }} 
+                  </small>
+                  {% if book.author.id == request.user.id %}
+                  {% else %}
+                  <span class="save"><a href="{% url 'add_to_wishlist' book.id %}">💚</a></span>
+                  {% endif %}
+
                   <p class="book-cost">$ {{ book.price }} {{ book.author }} => {{ book.genre }} work</p>
-                </div>
+                </div> 
                 {% comment %} <img src="{{ book.image.url }}" alt="{{ book.title }}" /> {% endcomment %}
                 {% comment %} <hr /> {% endcomment %}
                 <h3>{{ book.title }}</h3>
@@ -266,7 +283,9 @@
                       {% comment %} <a href="{% url 'book_details' book.id %}" class="btn btn-sm col-sm-6 btn-outline-success">Apply Now</a>
                       <a href="{% url 'book_details' book.id %}" class="btn btn-sm col-sm-6 btn-outline-success">Apply Now</a> {% endcomment %}
                       <a href="{% url 'book_details' book.id %}" class="btn btn-sm col-sm-4 btn-outline-success">Apply Now</a>
-                      <a href="{% url 'add_to_wishlist' book.id %}" class="btn btn-sm col-sm-4 btn-success">Add to wishlist</a>
+                    {% comment %} <span class="save"><a href="{% url 'add_to_wishlist' book.id %}">💚</a></span> {% endcomment %}
+
+                      {% comment %} <a href="{% url 'add_to_wishlist' book.id %}" class="btn btn-sm col-sm-4 btn-success">Add to wishlist</a> {% endcomment %}
                     {% endif %}
                   </div>
                   {% comment %}
@@ -274,7 +293,7 @@
               </div>
             {% endfor %}
           {% else %}
-            <p>No books found</p>
+            <p>No jobs found</p>
           {% endif %}
         </div>
       </div>
