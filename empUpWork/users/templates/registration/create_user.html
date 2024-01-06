@@ -70,6 +70,7 @@
   }
   h1 {
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   .apple {
     border: 2px slice black;
@@ -80,14 +81,22 @@
     padding: 3px;
     margin: 10px 180px;
   }
+  .apple:hover {
+    background-color: black;
+    color: white;
+  }
   .google {
     border: 2px slice black;
     border-radius: 18px;
-    background-color: blue;
-    color: snow;
+    background-color: black;
+    color: white;
     width: 500px;
     padding: 3px;
     margin: 10px 180px;
+  }
+  .google:hover {
+    background-color: white;
+    color: black;
   }
   hr{
     width: 220px;
@@ -124,7 +133,9 @@
     <h1>Sign up to hire talent</h1>
 
     <button class="apple">Continue with Apple</button><br>
-    <button class="google">Continue with Google</button>
+    <button class="google">Continue with 
+      <span style="color: blue;">G</span><span style="color: red;">o</span><span style="color: orange;">o</span><span style="color: blue;">g</span><span style="color: green;">l</span><span style="color: red;">e</span>
+    </button>
     <div class="grid_hr">
       <div><hr></div>
       <div><pre> or </pre></div>
