@@ -5,21 +5,6 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError, models
 from PIL import Image
 
-# models.SET_NULL   =>   if the user is deleted,
-#                        the book will still exist but the author
-#                        will be set to null (null=None)
-# -----------------------------------------------------
-# models.CASCADE    =>   if the user is deleted,
-#                        the book will be deleted as well
-# -----------------------------------------------------
-# models.PROTECT    =>   if the user is deleted,
-#                        the book will not be deleted and
-#                        an error will be raised
-# -----------------------------------------------------
-# ORM = Object Relational Mapper
-# l = []
-# Books.objects.filter(user__first_name__in=l).order_by("created")
-
 
 class BooksManager(models.Manager):
     pass
