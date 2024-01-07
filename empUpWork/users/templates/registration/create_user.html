@@ -142,10 +142,10 @@
       <div><hr></div>
     </div>
     <div class="org">
-
+      
       {% include "form_snippets.html" with form=form btn_text='Register' %} 
     </div>
-
+    
     <div class="mb-5"><br>
       <small class="text-muted">
         Already have an account? 
@@ -154,7 +154,7 @@
       </div>
 
 
-      <div class="input-group">
+      {% comment %} <div class="input-group">
         <label for="location">Location</label>
         <select name="location" id="location">
           <option value="US">United States</option>
@@ -162,7 +162,7 @@
           <option value="CA">Canada</option>
           <option value="">Other</option>
         </select>
-      </div>
+      </div> {% endcomment %}
   </div>
 
   <br><br><br><br><br>
