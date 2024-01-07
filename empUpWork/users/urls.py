@@ -6,6 +6,12 @@ from .views import *
 urlpatterns = [
     path('registration/', registration, name='registration'),
     path('wedding/', wedding, name='wedding'),
+    path('Hotel/', Hotel, name='Hotel'),
+    path('Restaurants/', Restaurants, name='Restaurants'),
+    path('Lelase/', Lelase, name='Lelase'),
+    path('Types/', Types, name='Types'),
+
+
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('profile/', profile, name='profile')
