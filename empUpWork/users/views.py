@@ -48,6 +48,78 @@ def wedding(request):
     return render(request, 'registration/temp/wedding.html', context)
 
 
+def Types(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            messages.success(request,
+                             f"Welcome to our site {username}!")
+            form.save(commit=True)
+            return redirect('login')
+        else:
+            messages.error(request,
+                           "Please correct the errors below.")
+            context = {'form': form}
+            return render(request, 'registration/temp/types.html', context)
+
+    context = {'form': UserForm()}
+    return render(request, 'registration/temp/types.html', context)
+
+def Hotel(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            messages.success(request,
+                             f"Welcome to our site {username}!")
+            form.save(commit=True)
+            return redirect('login')
+        else:
+            messages.error(request,
+                           "Please correct the errors below.")
+            context = {'form': form}
+            return render(request, 'registration/temp/hotel.html', context)
+
+    context = {'form': UserForm()}
+    return render(request, 'registration/temp/hotel.html', context)
+
+def Restaurants(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            messages.success(request,
+                             f"Welcome to our site {username}!")
+            form.save(commit=True)
+            return redirect('login')
+        else:
+            messages.error(request,
+                           "Please correct the errors below.")
+            context = {'form': form}
+            return render(request, 'registration/temp/restaurants.html', context)
+
+    context = {'form': UserForm()}
+    return render(request, 'registration/temp/restaurants.html', context)
+
+def Lelase(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            messages.success(request,
+                             f"Welcome to our site {username}!")
+            form.save(commit=True)
+            return redirect('login')
+        else:
+            messages.error(request,
+                           "Please correct the errors below.")
+            context = {'form': form}
+            return render(request, 'registration/temp/lelase.html', context)
+
+    context = {'form': UserForm()}
+    return render(request, 'registration/temp/lelase.html', context)
+
 @login_required
 def profile(request):
 
