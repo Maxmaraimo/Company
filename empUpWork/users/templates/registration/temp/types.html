@@ -13,7 +13,7 @@
       grid-template-columns: repeat(4, 1fr);
     }
     .first:hover {
-      padding: 3px;
+      padding: 2px;
     }
     .ch_first {
       box-shadow: 2px 2px 4px lightslategray, -2px -2px 4px lightgrey;
@@ -21,6 +21,7 @@
       border-radius: 15px;
       height: 250px;
       width: 250px;
+      margin: 10px 0px;
     }
     .ch_first h1 {
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -34,6 +35,7 @@
     .ch_first p {
       color: gray;
       text-align: center;
+      font-size: 13px;
     }
     .ch_first img {
       text-align: center;
@@ -58,7 +60,7 @@
         <br />
         <img src="/media/types/wedding_hall.png" width="120px" height="120px" alt="" />
         <h1><a href="{% url 'wedding' %}">Wedding hall</a></h1>
-        <p>click to this opening hotel page</p>
+        <p>click to this opening wedding page</p>
       </div>
     </div>
     <div class="first">
@@ -66,7 +68,7 @@
         <br />
         <img src="/media/types/Restaurants.png" width="200px" height="130px" alt="" style="margin: 1px 30px;" />
         <h1><a href="{% url 'Restaurants' %}">Restaurants</a></h1>
-        <p>click to this opening hotel page</p>
+        <p>click to this opening restaurants page</p>
       </div>
     </div>
     <div class="first">
@@ -74,9 +76,45 @@
         <br />
         <img src="/media/types/Lelase.png" width="120px" height="120px" alt="" style="margin: 4px 60px;" />
         <h1><a href="{% url 'Lelase' %}">Lelase</a></h1>
-        <p>click to this opening hotel page</p>
+        <p>click to this opening lelase page</p>
       </div>
     </div>
+
+    {% comment %} <div class="second-container">
+      <div class="first">
+        <div class="ch_first">
+          <br />
+          <img src="/media/types/hotel.png" width="120px" height="120px" alt="" />
+          <h1><a href="{% url 'Hotel' %}">Hotel</a></h1>
+          <p>click to this opening hotel page</p>
+        </div>
+      </div>
+      <div class="first">
+        <div class="ch_first">
+          <br />
+          <img src="/media/types/wedding_hall.png" width="120px" height="120px" alt="" />
+          <h1><a href="{% url 'wedding' %}">Wedding hall</a></h1>
+          <p>click to this opening hotel page</p>
+        </div>
+      </div>
+      <div class="first">
+        <div class="ch_first">
+          <br />
+          <img src="/media/types/Restaurants.png" width="200px" height="130px" alt="" style="margin: 1px 30px;" />
+          <h1><a href="{% url 'Restaurants' %}">Restaurants</a></h1>
+          <p>click to this opening hotel page</p>
+        </div>
+      </div>
+      <div class="first">
+        <div class="ch_first">
+          <br />
+          <img src="/media/types/Lelase.png" width="120px" height="120px" alt="" style="margin: 4px 60px;" />
+          <h1><a href="{% url 'Lelase' %}">Lelase</a></h1>
+          <p>click to this opening hotel page</p>
+        </div>
+      </div>
+    </div> {% endcomment %}
+
   </div>
 {% endblock %}
 
