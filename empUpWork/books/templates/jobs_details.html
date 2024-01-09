@@ -111,54 +111,54 @@
 {% comment %}author genre is_available price created{% endcomment %}
 
 {% block content %}
-  <div class="grid">
-    <div class="container">
-      <h2 class="cen_h3">Apply work</h2>
-      <div class="main">
-        <h1>
-          {{ object.title }}
-          <span class="back"><a href="{% url 'books_view' %}">→</a></span>
-        </h1>
-        <p>{{ object.description }}</p>
-        <p>{{ object.author }}</p>
-        <p>{{ object.genre }}</p>
-        <p>{{ object.is_available }}</p>
-        <p>💲 {{ object.price }}</p>
-        <p>{{ object.created }}</p>
-      </div>
-      <hr style="width: 850px;">
-      <br />
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
-      </div>
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingTextarea2">Comments</label>
-      </div>
-      <br />
-      <input type="file" name="file" />
-      <a href="" class="btn btn-success">Submit</a>
+<div class="grid">
+  <div class="container">
+    <h2 class="cen_h3">Apply work</h2>
+    <div class="main">
+      <h1>
+        {{ object.title }}
+        <span class="back"><a href="{% url 'books_view' %}">→</a></span>
+      </h1>
+      <p>{{ object.description }}</p>
+      <p>{{ object.author }}</p>
+      <p>{{ object.genre }}</p>
+      <p>{{ object.is_available }}</p>
+      <p>💲 {{ object.price }}</p>
+      <p>{{ object.created }}</p>
     </div>
+    <hr style="width: 850px;">
+    <br />
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+    </div>
+    <div class="form-floating">
+      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+      <label for="floatingTextarea2">Comments</label>
+    </div>
+    <br />
+    <input type="file" name="file" />
+    <a href="" class="btn btn-success">Submit</a>
+  </div>
 
-    <div>
-      <div class="ch_2">
-        <h1><a class="profile" href="{% url 'profile' %}">{{ user.username }} profile</a></h1>
-        <hr />
-        <div class="select-wrapper">
-          <br />
-          <label for="type" class="select-label"><span>Вы:</span></label>
-          <select id="type" name="type">
-            <option value="freelancer">Freelancer</option>
-            <option value="client">Client</option>
-          </select>
-        </div>
-        <h2 class="me">Me: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi natus nesciunt, consequuntur officiis assumenda vitae culpa saepe.</h2>
-        <hr />
-        <a href="{% url 'logout' %}" class="logout">Logout →</a>
+  <div>
+    <div class="ch_2">
+      <h1><a class="profile" href="{% url 'profile' %}">{{ user.username }} profile</a></h1>
+      <hr />
+      <div class="select-wrapper">
+        <br />
+        <label for="type" class="select-label"><span>Вы:</span></label>
+        <select id="type" name="type">
+          <option value="freelancer">Freelancer</option>
+          <option value="client">Client</option>
+        </select>
       </div>
+      <h2 class="me">Me: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi natus nesciunt, consequuntur officiis assumenda vitae culpa saepe.</h2>
+      <hr />
+      <a href="{% url 'logout' %}" class="logout">Logout →</a>
     </div>
   </div>
+</div>
 {% endblock %}
 
 {% block script %}
