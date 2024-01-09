@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+  <title>Wedding</title>
+{% endblock %}
+
+{% block style %}
+  <style>
+    .wedding_h1 {
+      text-align: center;
+      margin: 10px 20px;
+      color: rgb(14, 183, 104);
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .container {
+        background-image: linear-gradient(to right, snow, white);
+        border-radius: 0 20px 20px 20px;
+        padding: 50px;
+        border: 1px solid green;
+        margin: 10px -55px;
+        width: 950px;
+      }
+      .main {
+        border-radius: 10px;
+        padding: 25px;
+        background-image: linear-gradient(to right, snow, snow);
+        box-shadow: 1px 1px 2px lightgray, -1px -1px 2px lightgrey;
+        margin: 20px -30px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+      }
+      .ch_2 {
+        width: 330px;
+        height: 720px;
+        background-color: white;
+        border: 0.3px solid rgb(14, 183, 104);
+        color: black;
+        margin: 10px 50px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      .ch_2 h1,
+      a {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 20px;
+      }
+      .ch_2 h1,
+      .profile {
+        text-decoration: none;
+        color: black;
+        margin: 20px 30px;
+      }
+      .ch_2 .profile:hover {
+        color: black;
+        text-decoration: underline;
+      }
+      .ch_2 hr {
+        width: 230px;
+        margin: 0 auto;
+        background-color: green;
+        color: green;
+        box-shadow: 2px 2px 4px green, -2px -2px 4px orange;
+      }
+      .ch_2 .me {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 15px;
+        margin: 10px 20px;
+        text-align: left;
+      }
+      .ch_2 .logout {
+        text-decoration: none;
+        color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        margin: 10px 30px;
+        float: left;
+      }
+      .ch_2 .logout:hover {
+        text-decoration: underline;
+      }
+      .cen_h3 {
+        text-align: center;
+        color: rgb(14, 183, 104);
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .back {
+        float: right;
+        background-color: rgba(255, 0, 0, 0.1);
+        border-radius: 50%;
+        padding: 8px;
+        font-size: 20px;
+  
+      }
+      .back a {
+        color: red;
+        font-size: 20px;
+        text-decoration: none;
+      }
+      .back:hover {
+        background-color: red;
+        color: snow;
+      }
+      .back:hover a {
+        color: white;
+      }
+
+  </style>
+{% endblock %}
+
+{% block content %}
+  <br />
+  <div class="grid">
+    <div class="container">
+      <h2 class="cen_h3">Order product</h2>
+      <div class="main">
+        <h3>Happy Pizza</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio reprehenderit dolores quibusdam, laboriosam asperiores vel sint odit! Porro, voluptas nisi. Incidunt laboriosam cum voluptatibus facere delectus fuga doloremque similique, nostrum perferendis nesciunt sunt vero assumenda omnis voluptates eaque dicta iste animi ipsa eveniet mollitia enim, praesentium distinctio? Suscipit consectetur voluptatem qui accusamus nihil molestias in soluta, fugiat cupiditate fugit repudiandae magni ut? Asperiores quam eum reprehenderit eveniet quibusdam obcaecati praesentium?</p>
+        <b>$15</b>
+        <h6>1000 people</h6>
+        <h5>Samarqand 18B Uy</h5>
+      </div>
+      <hr style="width: 850px;">
+      <br />
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+      </div>
+      <br />
+      <input type="file" name="file" />
+      <a href="" class="btn btn-success">Submit</a>
+    </div>
+  
+    <div>
+      <div class="ch_2">
+        <h1><a class="profile" href="{% url 'profile' %}">{{ user.username }} profile</a></h1>
+        <hr />
+        <div class="select-wrapper">
+          <br />
+          <label for="type" class="select-label"><span>Вы:</span></label>
+          <select id="type" name="type">
+            <option value="freelancer">Freelancer</option>
+            <option value="client">Client</option>
+          </select>
+        </div>
+        <h2 class="me">Me: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi natus nesciunt, consequuntur officiis assumenda vitae culpa saepe.</h2>
+        <hr />
+        <a href="{% url 'logout' %}" class="logout">Logout →</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
