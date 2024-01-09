@@ -130,6 +130,7 @@
   <h1>{{ user.username }} profile  
     <span class="back"><a href="{% url 'books_view' %}">→</a></span>
   </h1>
+  <img src="{{ user.profile.image.url }}" alt="">
     <div class="mb-5" style="font-size: 17px;">
       <div class="select-wrapper">
         <label for="type" class="select-label">Вы:</label>
