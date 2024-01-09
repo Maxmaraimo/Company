@@ -10,7 +10,9 @@ genre_choices = (
     ("Web Designer", "Web Designer"),
     ("FullStack", "FullStack"),
     ("Vedio Edit", "Vedio Edit"),
-    ("Professional", "Professional"),
+    ("chatAi", "chatAi"),
+    ("WordPress", "WordPress"),
+    ("SMM", "SMM"),
     ("Others", "Others"),
 
 )
