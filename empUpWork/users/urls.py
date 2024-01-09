@@ -10,7 +10,7 @@ urlpatterns = [
     path('Restaurants/', Restaurants, name='Restaurants'),
     path('Lelase/', Lelase, name='Lelase'),
     path('Types/', Types, name='Types'),
-
+    path('Order/', Order, name='Order'),
 
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
