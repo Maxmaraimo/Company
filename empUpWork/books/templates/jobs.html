@@ -173,13 +173,18 @@
       background-color: rgba(172, 255, 47, 0.575);
       padding: 7px;
       border-radius: 50%;
-      {% comment %} margin: -155px -15px; {% endcomment %}
     }
     .save:hover {
       background-color: greenyellow;
     }
     .save a {
       text-decoration: none;
+    }
+    .worker_photo {
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      margin: 10px 0px;
     }
   </style>
 {% endblock %}
@@ -300,6 +305,7 @@
     </div>
 
     <div class="ch_2">
+      <img src="{{ user.profile.image.url }}" alt="" class="worker_photo">
       <h1><a class="profile" href="{% url 'profile' %}">{{ user.username }} profile</a></h1>
       <hr>
       <div class="select-wrapper">
@@ -317,6 +323,6 @@
   </div>
 {% endblock %}
 
-{% block script %}
 
+{% block script %}
 {% endblock %}
