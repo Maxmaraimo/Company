@@ -120,61 +120,98 @@
     padding: 7px;
     width: 120px;
   } 
+  .main .container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+  }
+  .main .container .first .prf_img img {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 13px;
+    margin: -120px 14px;
+    width: 220px;
+    background-color: white;
+  }
+  .main .container .first {
+    box-shadow: 2px 2px 4px lightgray, -2px -2px 4px lightgray;
+    height: 550px;
+    width: 250px;
+    margin: 0px -35px;
+  } 
+
+  .main .container .second {
+    padding: 50px;
+    color: green;
+    box-shadow: 2px 2px 4px lightgray, -2px -2px 4px lightgray;
+    box-shadow: 2px 2px 2px gray, -2px -2px 4px helgreen;
+    width: 850px;
+    margin: 5px -310px;
+    {% comment %} border: 1px solid green; {% endcomment %}
+    {% comment %} background: linear-gradient(to right, snow, white); {% endcomment %}
+  }
 </style>
 {% endblock %}
 
 {% block content %}
 {% comment %} <br><br><br> {% endcomment %}
-<br>
+<br><br><br><br>
 <div class="main">
-  <h1>{{ user.username }} profile  
-    <span class="back"><a href="{% url 'books_view' %}">→</a></span>
-  </h1>
-  <img src="{{ user.profile.image.url }}" alt="">
-    <div class="mb-5" style="font-size: 17px;">
-      <div class="select-wrapper">
-        <label for="type" class="select-label">Вы:</label>
-        <select id="type" name="type">
-          <option value="freelancer">Freelancer</option>
-          <option value="client">Client</option>
-        </select>
-      </div>
+  <div class="container">
+    <div class="first">
+      <div class="prf_img">
+        <img src="{{ user.profile.image.url }}" alt=""><br>
+      </div><br><br><br><br>
+      <pre>            <h1>{{ user.username }}</h1></pre>
     </div>
+    <div class="second">
+      <h1>{{ user.username }} profile  
+        <span class="back"><a href="{% url 'books_view' %}">→</a></span>
+      </h1>
+        <div class="mb-5" style="font-size: 17px;">
+          <div class="select-wrapper">
+            <label for="type" class="select-label">Вы:</label>
+            <select id="type" name="type">
+              <option value="freelancer">Freelancer</option>
+              <option value="client">Client</option>
+            </select>
+          </div>
+        </div>
+        
+      <form method="POST"
+            enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if u_form.errors %}
+          {% bootstrap_form_errors u_form %}
+        {% endif %}
     
-  <form method="POST"
-        enctype="multipart/form-data">
-    {% csrf_token %}
-    {% if u_form.errors %}
-      {% bootstrap_form_errors u_form %}
-    {% endif %}
-
-    {% if p_form.errors %}
-      {% bootstrap_form_errors p_form %}
-    {% endif %}
-
-    {% bootstrap_form u_form %}
-    {% bootstrap_form p_form %}
-
-    <div class="user_profile">
-      <input type="date">
-      {% comment %} <input type="text" class="description" placeholder="description"> {% endcomment %}
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 170px"></textarea>
-        <label for="floatingTextarea2">About me</label>
-      </div>
-
-      {% comment %} <a href="https://github.com/Maxmaraimo/">github</a> {% endcomment %}
-      <div class="social">
-        <button class="github"><a href="https://github.com/Maxmaraimo/">GitHub</a></button>
-        <button class="twitter"><a href="https://twitter.com/MrDollor77">Twitter</a></button>
-        <button class="telegram"><a href="https://t.me/Ozodbek_Shuxratov">Telegram</a></button>
-      </div>
-      
-    </div>
-<br>
-    <button class="btn btn-outline-success" type="submit" id="update">Update</button>
+        {% if p_form.errors %}
+          {% bootstrap_form_errors p_form %}
+        {% endif %}
+    
+        {% bootstrap_form u_form %}
+        {% bootstrap_form p_form %}
+    
+        <div class="user_profile">
+          {% comment %} <input class="form-control" type="date"> {% endcomment %}
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 170px"></textarea>
+            <label for="floatingTextarea2">About me</label>
+          </div>
+    
+          <div class="social">
+            <button class="github"><a href="https://github.com/Maxmaraimo/">GitHub</a></button>
+            <button class="twitter"><a href="https://twitter.com/MrDollor77">Twitter</a></button>
+            <button class="telegram"><a href="https://t.me/Ozodbek_Shuxratov">Telegram</a></button>
+          </div>
+          
+        </div>
+    <br>
   </form>
 </div>
+</div>
+<button class="btn btn-outline-success" type="submit" id="update">Update</button>
+  </div>
 {% endblock %}
 
 {% block script %}
