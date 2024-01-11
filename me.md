@@ -20,6 +20,7 @@ Let's connect and share our knowledge! You can find me on:
 - [GitHub](https://github.com/Maxmaraimo/)
 - [LinkedIn](https://www.linkedin.com/in/%D0%BE%D0%B7%D0%BE%D0%B4%D0%B1%D0%B5%D0%BA-%D0%BC%D0%B0%D1%85%D0%BC%D0%B0%D1%80%D0%B0%D0%B8%D0%BC%D0%BE%D0%B2-07480b2a6/)
 - [Twitter](https://twitter.com/MrDollor77)
+- [Kwork](https://kwork.ru/projects?a=1&prices-filters%5B%5D=1&prices-filters%5B%5D=2)
 
 ## 📈 Projects
 Stay tuned for exciting projects! Currently diving into JavaScript.
