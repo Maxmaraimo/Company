@@ -150,19 +150,24 @@
     {% comment %} border: 1px solid green; {% endcomment %}
     {% comment %} background: linear-gradient(to right, snow, white); {% endcomment %}
   }
+  .name {
+    margin: 120px 50px;
+  }
 </style>
 {% endblock %}
 
 {% block content %}
-{% comment %} <br><br><br> {% endcomment %}
 <br><br><br><br>
 <div class="main">
   <div class="container">
     <div class="first">
       <div class="prf_img">
         <img src="{{ user.profile.image.url }}" alt=""><br>
-      </div><br><br><br><br>
-      <pre>            <h1>{{ user.username }}</h1></pre>
+      </div>
+      <div class="name">
+        <h1>{{ user.username }}</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis itaque ducimus laborum dolorum facere nihil consequuntur repellat iure, voluptatem libero? Non sed maiores fugit ad possimus porro eos numquam eius.</p>
+      </div>
     </div>
     <div class="second">
       <h1>{{ user.username }} profile  
