@@ -61,101 +61,7 @@
       background-color: rgb(14, 183, 104);
       color: white;
     }
-    .end {
-      background-color: rgb(34, 56, 56);
-    }
-  
-    .end .ch-end {
-      display: grid;
-      grid-template-columns: repeat(5, 320px);
-    }
-  
-    .end div {
-      margin: 40px 50px;
-    }
-  
-    .end b,
-    h4,
-    p {
-      cursor: pointer;
-  
-    }
-  
-    .end h4 {
-      color: snow;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-  
-    .end b {
-      text-decoration: none;
-      color: lightslategray;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-size: 12px;
-      margin: 50px 5px;
-    }
-  
-    hr {
-      box-shadow: 1px 1px 1px gray, -1px -1px 1px rgb(46, 45, 45);
-      width: 1200px;
-    }
-  
-    .grids {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      font-size: 15px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      margin: -50px 20px;
-    }
-  
-    .grids .first {
-      color: lightslategray;
-    }
-  
-    .grids .second {
-      display: grid;
-      grid-template-columns: repeat(4, 90px);
-      color: snow;
-    }
- 
-    .end {
-      background-color: rgb(34, 56, 56);
-      margin: 10px -120px;
-      width: 1410px;
-    }
-  
-    .end .ch-end {
-      display: grid;
-      grid-template-columns: repeat(5, 320px);
-    }
-  
-     .end div {
-      margin: 40px 50px;
-    } 
-  
-    .end b,
-    h4,
-    p {
-      cursor: pointer;
-  
-    }
-  
-    .end h4 {
-      color: snow;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-  
-    .end b {
-      text-decoration: none;
-      color: lightslategray;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-size: 12px;
-      margin: 50px 5px;
-    }
-  
-    hr {
-      box-shadow: 1px 1px 1px gray, -1px -1px 1px rgb(46, 45, 45);
-      width: 1200px;
-    }
+    
   
   </style>
 {% endblock %}
@@ -255,10 +161,8 @@
 
 
 
-  <br><br><br>
-  <br><br><br>
 
-  <div class="end">
+  {% comment %} <div class="end">
     <div class="ch-end">
       <div class="company">
         <h4>Company</h4>
@@ -299,7 +203,7 @@
         <p>FQAs</p>
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
   {% comment %} <div class="containerss">
     <div class="container__items">008$
       <input type="radio" name="stars" id="st5">
