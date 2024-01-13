@@ -91,10 +91,9 @@ main#logged-in-menu > div:last-child {
 /* .logged-out-navbar a:hover {
     background-color: #999;
 } */
-
 .end {
   background-color: rgb(34, 56, 56);
-  margin: 10px -120px;
+  margin: 10px -50px;
   width: 1410px;
 }
 
@@ -127,28 +126,10 @@ p {
   margin: 50px 5px;
 }
 
-hr {
+.end hr {
   box-shadow: 1px 1px 1px gray, -1px -1px 1px rgb(46, 45, 45);
   width: 1200px;
 }
-
-  .grids {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    font-size: 15px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: -50px 20px;
-  }
-
-  .grids .first {
-    color: lightslategray;
-  }
-
-  .grids .second {
-    display: grid;
-    grid-template-columns: repeat(4, 90px);
-    color: snow;
-  }
 
   * {
     margin: 0;
