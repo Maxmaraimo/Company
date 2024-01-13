@@ -139,7 +139,7 @@
     width: 250px;
     margin: 0px -35px;
   } 
-
+  
   .main .container .second {
     padding: 50px;
     color: green;
@@ -152,6 +152,45 @@
   }
   .name {
     margin: 120px 50px;
+  }
+  .end {
+    background-color: rgb(34, 56, 56);
+    margin: 10px -50px;
+    width: 1410px;
+  }
+  
+  .end .ch-end {
+    display: grid;
+    grid-template-columns: repeat(5, 320px);
+  }
+  
+   .end div {
+    margin: 40px 50px;
+  } 
+  
+  .end b,
+  h4,
+  p {
+    cursor: pointer;
+  
+  }
+  
+  .end h4 {
+    color: snow;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .end b {
+    text-decoration: none;
+    color: lightslategray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    margin: 50px 5px;
+  }
+  
+  .end hr {
+    box-shadow: 1px 1px 1px gray, -1px -1px 1px rgb(46, 45, 45);
+    width: 1200px;
   }
 </style>
 {% endblock %}
@@ -208,6 +247,7 @@
             <button class="github"><a href="https://github.com/Maxmaraimo/">GitHub</a></button>
             <button class="twitter"><a href="https://twitter.com/MrDollor77">Twitter</a></button>
             <button class="telegram"><a href="https://t.me/Ozodbek_Shuxratov">Telegram</a></button>
+            <button class="btn btn-outline-success" type="submit" id="update">Update</button>
           </div>
           
         </div>
@@ -215,7 +255,9 @@
   </form>
 </div>
 </div>
-<button class="btn btn-outline-success" type="submit" id="update">Update</button>
+    {% comment %} <button class="btn btn-outline-success" type="submit"><a href="{% url 'updateProfile' %}">sds</a></button> {% endcomment %}
+    <a href="{% url 'updateProfile' %}">updateProfile</a>
+
   </div>
 {% endblock %}
 
