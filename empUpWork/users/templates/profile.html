@@ -192,6 +192,17 @@
     box-shadow: 1px 1px 1px gray, -1px -1px 1px rgb(46, 45, 45);
     width: 1200px;
   }
+  .UpdateButton a {
+    text-decoration: none;
+    color: white;
+  }
+  .UpdateButton {
+    padding: 10px;
+    background-color: green;
+    border: none;
+    border-radius: 8px;
+    width: 230px;
+  }
 </style>
 {% endblock %}
 
@@ -256,7 +267,8 @@
 </div>
 </div>
     {% comment %} <button class="btn btn-outline-success" type="submit"><a href="{% url 'updateProfile' %}">sds</a></button> {% endcomment %}
-    <a href="{% url 'updateProfile' %}">updateProfile</a>
+    <button class="UpdateButton" type="submit"><a href="{% url 'updateProfile' %}">Profile</a></button>
+
 
   </div>
 {% endblock %}
