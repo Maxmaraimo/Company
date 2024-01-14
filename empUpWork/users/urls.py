@@ -11,9 +11,9 @@ urlpatterns = [
     path('Lelase/', Lelase, name='Lelase'),
     path('Types/', Types, name='Types'),
     path('Order/', Order, name='Order'),
-    path('updateProfile/', updateProfile, name='updateProfile'),
+    path('profile/', updateProfile, name='updateProfile'),
 
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
-    path('profile/', profile, name='profile')
+    path('updateProfile/', profile, name='profile')
 ]
