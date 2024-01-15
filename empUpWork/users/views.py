@@ -138,7 +138,7 @@ def Order(request):
     context = {'form': UserForm()}
     return render(request, 'registration/temp/order.html', context)
 
-def updateProfile(request):
+def Profile(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
@@ -151,13 +151,13 @@ def updateProfile(request):
             messages.error(request,
                            "Please correct the errors below.")
             context = {'form': form}
-            return render(request, 'registration/updateProfile.html', context)
+            return render(request, 'profile.html', context)
 
     context = {'form': UserForm()}
-    return render(request, 'registration/updateProfile.html', context) 
+    return render(request, 'profile.html', context) 
 
 @login_required
-def profile(request):
+def updateProfile(request):
 
     if request.method == 'POST':
         p_form = ProfileForm(request.POST,
@@ -175,10 +175,10 @@ def profile(request):
                 "u_form": u_form,
                 "p_form": p_form,
             }
-            return render(request, 'profile.html', context)
+            return render(request, 'updateProfile.html', context)
 
     context = {
         'u_form': UserUpdateForm(instance=request.user),
         'p_form': ProfileForm(instance=request.user.profile)
     }
-    return render(request, 'profile.html', context)
+    return render(request, 'updateProfile.html', context)
