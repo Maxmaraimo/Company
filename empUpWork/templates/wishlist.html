@@ -196,6 +196,12 @@
     .card-created a {
       margin: 10px 30px;
     }
+    .worker_photo {
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      margin: 10px 0px;
+    }
     {% comment %} .went .second {
     } {% endcomment %}
   </style>
@@ -306,10 +312,11 @@ created
   </div>
   </div>
   <div class="ch_2">
-    <h1><a class="profile" href="{% url 'profile' %}">{{ user.username }} profile</a></h1>
+    <img src="{{ user.profile.image.url }}" alt="" class="worker_photo">
+    <h1><a class="profile" href="{% url 'Profile' %}">{{ user.username }} profile</a></h1>
     <hr>
-    <br>
     <div class="select-wrapper">
+      <br>
       <label for="type" class="select-label"><span>Вы:</span></label>
       <select id="type" name="type">
         <option value="freelancer">Freelancer</option>
