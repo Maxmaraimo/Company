@@ -147,7 +147,12 @@
         box-shadow: 1px 1px 1px gray, -1px -1px 1px rgb(46, 45, 45);
         width: 1200px;
       }
-
+      .worker_photo {
+        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        margin: 10px 0px;
+      }
   </style>
 {% endblock %}
 
@@ -180,10 +185,11 @@
   
     <div>
       <div class="ch_2">
-        <h1><a class="profile" href="{% url 'profile' %}">{{ user.username }} profile</a></h1>
-        <hr />
+        <img src="{{ user.profile.image.url }}" alt="" class="worker_photo">
+        <h1><a class="profile" href="{% url 'Profile' %}">{{ user.username }} profile</a></h1>
+        <hr>
         <div class="select-wrapper">
-          <br />
+          <br>
           <label for="type" class="select-label"><span>Вы:</span></label>
           <select id="type" name="type">
             <option value="freelancer">Freelancer</option>
@@ -191,8 +197,8 @@
           </select>
         </div>
         <h2 class="me">Me: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi natus nesciunt, consequuntur officiis assumenda vitae culpa saepe.</h2>
-        <hr />
-        <a href="{% url 'logout' %}" class="logout">Logout →</a>
+        <hr>
+        <a href="{% url 'logout' %}" class="logout">Logout → </a>
       </div>
     </div>
   </div>
