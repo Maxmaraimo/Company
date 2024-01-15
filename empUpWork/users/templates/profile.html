@@ -192,6 +192,14 @@
     box-shadow: 1px 1px 1px gray, -1px -1px 1px rgb(46, 45, 45);
     width: 1200px;
   }
+  
+  .skills_button {
+    padding: 8px;
+    margin: 5px 5px;
+    background-color: white;
+    border-radius: 45px;
+    border: 1px solid lightgrey;
+  }
   .UpdateButton a {
     text-decoration: none;
     color: white;
@@ -216,13 +224,6 @@
       </div>
       <div class="name">
         <h1>{{ user.username }}</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis itaque ducimus laborum dolorum facere nihil consequuntur repellat iure, voluptatem libero? Non sed maiores fugit ad possimus porro eos numquam eius.</p>
-      </div>
-    </div>
-    <div class="second">
-      <h1>{{ user.username }} profile  
-        <span class="back"><a href="{% url 'books_view' %}">→</a></span>
-      </h1>
         <div class="mb-5" style="font-size: 17px;">
           <div class="select-wrapper">
             <label for="type" class="select-label">Вы:</label>
@@ -232,6 +233,21 @@
             </select>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="second">
+      <h1>{{ user.username }} profile  
+        <span class="back"><a href="{% url 'books_view' %}">→</a></span>
+      </h1>
+        {% comment %} <div class="mb-5" style="font-size: 17px;">
+          <div class="select-wrapper">
+            <label for="type" class="select-label">Вы:</label>
+            <select id="type" name="type">
+              <option value="freelancer">Freelancer</option>
+              <option value="client">Client</option>
+            </select>
+          </div>
+        </div> {% endcomment %}
         
       <form method="POST"
             enctype="multipart/form-data">
@@ -244,32 +260,55 @@
           {% bootstrap_form_errors p_form %}
         {% endif %}
     
-        {% bootstrap_form u_form %}
-        {% bootstrap_form p_form %}
+
+
+
     
         <div class="user_profile">
           {% comment %} <input class="form-control" type="date"> {% endcomment %}
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 170px"></textarea>
-            <label for="floatingTextarea2">About me</label>
+
+          <div class="about" style="color: black;">
+            <br>
+            <h4>Веб-разрабочик, веб-программист</h4>
+            <p>
+              Привет!
+              Я программист веб-разработчик, специализирующийся на создании сайтов. Моя деятельность сосредоточена на платформе Kwork, где я занимаюсь выполнением заказов и разработкой веб-проектов. Мое основное направление - создание функциональных и привлекательных веб-сайтов, соответствующих требованиям клиентов. Рад развиваться в сфере веб-разработки и создавать уникальные онлайн-пространства.
+              - Я с радостью буду сделать ваш проект за окончательной время.</p>
           </div>
-    
+          <div class="skills" style="color: black;">
+            <h5>Навыки</h5><br>
+            <button class="skills_button">Python</button>
+            <button class="skills_button">Django</button>
+            <button class="skills_button">Django rest framework</button>
+            <button class="skills_button">CSS</button>
+            <button class="skills_button">SCSS/SASS</button>
+            <button class="skills_button">JavaScript</button>
+            <button class="skills_button">HTML</button>
+            <button class="skills_button">React</button>
+            <button class="skills_button">Telegram bot</button>
+            <button class="skills_button">PostgreSQL</button>
+            <button class="skills_button">Bootstrap 5</button>
+            <button class="skills_button">Wordpress</button>
+          </div>
+  
+          <br>
+          <hr style="width: 230px;margin: 0 auto;">
+          <br>
+          
           <div class="social">
             <button class="github"><a href="https://github.com/Maxmaraimo/">GitHub</a></button>
             <button class="twitter"><a href="https://twitter.com/MrDollor77">Twitter</a></button>
             <button class="telegram"><a href="https://t.me/Ozodbek_Shuxratov">Telegram</a></button>
-            <button class="btn btn-outline-success" type="submit" id="update">Update</button>
           </div>
           
         </div>
     <br>
   </form>
 </div>
+
 </div>
-    {% comment %} <button class="btn btn-outline-success" type="submit"><a href="{% url 'updateProfile' %}">sds</a></button> {% endcomment %}
-    <button class="UpdateButton" type="submit"><a href="{% url 'updateProfile' %}">Profile</a></button>
-
-
+    {% comment %} <button class="btn btn-outline-success" type="submit" >Update</button> {% endcomment %}
+    <button class="UpdateButton" type="submit"><a href="{% url 'updateProfile' %}">update</a></button>
   </div>
 {% endblock %}
 
