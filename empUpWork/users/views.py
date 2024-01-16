@@ -169,7 +169,7 @@ def updateProfile(request):
             profile = p_form.save(commit=True)
             messages.success(request,
                              f"Your account has been updated!")
-            return redirect('profile')
+            return redirect('Profile')
         else:
             context = {
                 "u_form": u_form,
