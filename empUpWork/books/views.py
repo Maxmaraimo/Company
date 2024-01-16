@@ -10,7 +10,7 @@ from .models import Books
 from .usecases import *
 
 
-class AddBookView(CreateView):
+class AddWorkView(CreateView):
     modal = Books
     form_class = BookForm
     template_name = 'add_work.html'
@@ -25,7 +25,7 @@ class AddBookView(CreateView):
         return redirect('books_view')
 
 
-class BooksListView(ListView):
+class WorksListView(ListView):
     modal = Books
     template_name = 'jobs.html'
 
@@ -33,7 +33,7 @@ class BooksListView(ListView):
         return Books.objects.all()
 
 
-class BookDetailsView(DetailView):
+class WorksDetailsView(DetailView):
     modal = Books
     template_name = 'jobs_details.html'
 
@@ -41,7 +41,7 @@ class BookDetailsView(DetailView):
         return Books.objects.filter(id=self.kwargs['pk'])
 
 
-class BookUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+class JobsUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     modal = Books
     form_class = BookForm
     template_name = 'update_work.html'
