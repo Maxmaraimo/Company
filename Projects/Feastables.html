@@ -8,69 +8,28 @@
 </head>
 
 <body>
-    <div class="advertsament">
-        <div class="wrapper">
-            <div class="container">
-              <input type="radio" name="slide" id="c1" checked>
-              <label for="c1" class="card">
-                <div class="row">
-                  <div class="icon">1</div>
-                  <div class="description">
-                    <h4>Winter</h4>
-                    <p>Winter has so much to offer - creative activities</p>
-                  </div>
-                </div>
-              </label>
-        
-              <input type="radio" name="slide" id="c2">
-              <label for="c2" class="card">
-                <div class="row">
-                  <div class="icon">2</div>
-                  <div class="description">
-                    <h4>Digital Technology</h4>
-                    <p>Gets better every day - stay tunned</p>
-                  </div>
-                </div>
-              </label>
-        
-              <input type="radio" name="slide" id="c3">
-              <label for="c3" class="card">
-                <div class="row">
-                  <div class="icon">3</div>
-                  <div class="description">
-                    <h4>Globalization</h4>
-                    <p>Help people all over the world</p>
-                  </div>
-                </div>
-              </label>
-        
-              <input type="radio" name="slide" id="c4">
-              <label for="c4" class="card">
-                <div class="row">
-                  <div class="icon">4</div>
-                  <div class="description">
-                    <h4>New technologies</h4>
-                    <p>Space engineering becomes more and more advanced</p>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
+    <header>
+        <div class="main-navbars">
+            <nav class="main-nav">
+                <img class="main-img" src="./color3.png" alt="">
+                <ul class="main-list">
+                    <li class="list"><i class="fa-solid fa-envelope"></i>glgastronome@gmail.com</li>
+                    <br>
+                    <li class="list"><i class="fa-brands fa-instagram"></i>globalgastronome.ru</li>
+                </ul>
+            </nav>
         </div>
+    </header>
+<br>
 
-    <br><br><br><br><br><br><br>
 
-    <div class="result">
-        <h3>Каталог</h3>
-    </div>
     <div class="container">
         <div class="navbar">
             <hr>
             <a href="./Main.html">Каталог</a>
-            <a href="./Pringles.html">Контакты</a>
-            <a href="./Лапша.html">Доставка</a>
-            <a href="./Feastables.html">О нас:</a>
-
+            <a href="./files/Контакты.html">Контакты</a>
+            <a href="./files/delivery1.html">Доставка</a>
+            <a href="./files/О_нас.html">О нас</a>
             <hr>
         </div>
         <br><br>
@@ -308,6 +267,32 @@
 
 </body>
 <style>
+    .main-navbars{
+    margin: 0px auto;
+    width: 96%;
+    background: #fff;
+
+}
+.main-navbars img {
+    padding: 5px;
+    width: 300px;
+    height: 120px;
+    margin: 30px 40px;
+}
+.main-list{
+    list-style-type: none;
+    text-decoration: none;
+    margin-top: 90px;
+    margin-left: 50px;
+    padding-bottom: 30px;
+    margin-right: 30px;
+}
+
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    
+}
     body {
         background-color: rgb(241, 240, 240);
     }
@@ -411,7 +396,7 @@
 
     .navbar {
         background-color: white;
-        /* box-shadow: 2px 2px 4px lightgrey, -2px -2px 4px lightgrey; */
+        /* box-shadow: 2px 2px 4px brown, -2px -2px 4px brown; */
         height: 50px;
         text-align: center;
     }
@@ -421,7 +406,10 @@
         color: black;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-size: 23px;
-        padding: 6px;
+        padding: 8px;
+    }
+    .navbar a:hover {
+        color: brown;
     }
     .footer {
         background-color: maroon;
