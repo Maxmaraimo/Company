@@ -262,10 +262,19 @@
                   {% comment %}to filter created we can use | date:'d-m-Y' or | timesince or | timeuntil{% endcomment %}
                   <small class="text-secondary">Created at: {{ book.created|date:'d-m-Y' }} 
                   </small>
-                  {% if book.author.id == request.user.id %}
+                  {% if book.author.id == request.user.id %}                  
                   {% else %}
-                  <span class="save"><a href="{% url 'add_to_wishlist' book.id %}">💚</a></span>
-                  {% endif %}
+                  <span class="save">
+                      <a href="{% url 'add_to_wishlist' book.id %}">
+                          {% if is_saved %}
+                              🖤
+                          {% else %}
+                              💚
+                          {% endif %}
+                      </a>
+                  </span>
+              {% endif %}
+              
 
                   <p class="book-cost">$ {{ book.price }} {{ book.author }} => {{ book.genre }} work</p>
                 </div> 
