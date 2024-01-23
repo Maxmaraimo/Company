@@ -9,7 +9,6 @@ from PIL import Image
 class BooksManager(models.Manager):
     pass
 
-
 class NullPriceException(Exception):
     pass
 
@@ -39,7 +38,7 @@ class Books(models.Model):
             raise NullPriceException
         super().save(*args, **kwargs)
 
-        # We have to save the form first before getting the image path
+        
         img = Image.open(self.image.path)
         if img.height > 600 or img.width > 600:
             output_size = (600, 600)
