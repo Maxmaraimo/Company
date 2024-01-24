@@ -35,6 +35,3 @@ _________________________________________________
 Maxmaraimov Ozodbek Shuxratov
 ```
 
-```
-follow me
-```
