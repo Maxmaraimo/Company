@@ -6,11 +6,6 @@ gg.color("#4285F4","#4285F4")
 gg.pensize(5)
 #gg.speed(0)
 
-# [ google color codes ]
-#   red    = #DB4437
-#   blue   = #4285F4
-#   green  = #0F9D58
-#   yellow = #F4B400
 
 def google():
     gg.forward(120)
@@ -75,3 +70,9 @@ def google():
 google()
 gg.hideturtle()
 turtle.done()
+
+# [ google color codes ]
+#   red    = #DB4437
+#   blue   = #4285F4
+#   green  = #0F9D58
+#   yellow = #F4B400
