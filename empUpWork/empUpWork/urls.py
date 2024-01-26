@@ -27,7 +27,7 @@ urlpatterns = [
     path('jobs/', include('books.urls')),
 
 
-    # UNIVERSAL views
+    #* UNIVERSAL views
     path("", HomeView.as_view(), name="home_page"),
     path("wishlist/", wishlist_view, name="wishlist_view"),
     path("delete_from_wl/<int:book_id>/",
