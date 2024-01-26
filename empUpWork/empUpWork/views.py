@@ -20,7 +20,6 @@ class HomeView(TemplateView):
         context.update({
             "books_ids": books_ids
         })
-        # Do something
         return context
 
 
