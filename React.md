@@ -58,3 +58,9 @@
 ## Refactoring 
 > - Refactoring is the process of changing a software system in such a way that it does not alter the external behavior of the code, yet improves its internal structure.
 > - RU: Рефакторинг - это процесс изменения программного обеспечения таким образом, чтобы он не изменял внешнее поведение кода, но улучшал его внутреннюю структуру. 
+
+_________________________________________________
+```
+Maxmaraimov Ozodbek Shuxratov
+```
+_________________________________________________
