@@ -60,3 +60,8 @@ const submit = (e) => {
 ```
 
 ### 5. Replace the placeholders in the sendForm() method with your own service ID, template ID, and user ID. You can find these values in your EmailJS account dashboard.
+
+
+```
+Maxmaraimov Ozodbek Shuxratov
+```
