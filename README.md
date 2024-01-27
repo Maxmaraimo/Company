@@ -47,6 +47,7 @@ Redirection - перенаправление
 6. branches     => ```git branch -M main```
 7. push  //  pull  => ```git push -u origin main``` //  ```git pull origin main```
 _________________________________________________
+
 ```
 Maxmaraimov Ozodbek Shuxratov
 ```
