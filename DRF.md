@@ -872,6 +872,7 @@ when we visit it again it loads faster because it is cached.
 [This is the link that we can visit for filtering](https://www.django-rest-framework.org/api-guide/caching/)
 
 
+
 _________________________________________________
 ```
 Maxmaraimov Ozodbek Shuxratov
