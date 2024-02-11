@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Filtering</title>
+</head>
+<body>
+    <div class="numbers">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+        <span>11</span>
+        <span>12</span>
+        <span>13</span>
+        <span>14</span>
+        <span>15</span>
+        <span>16</span>
+        <span>17</span>
+        <span>18</span>
+        <span>19</span>
+        <span>20</span>
+        <span>21</span>
+        <span>22</span>
+        <span>23</span>
+        <span>24</span>
+        <span>25</span>
+        <span>26</span>
+        <span>27</span>
+        <span>28</span>
+        <span>29</span>
+        <span>30</span>
+        <span>31</span>
+        <span>32</span>
+        <span>33</span>
+        <span>34</span>
+        <span>35</span>
+        <span>36</span>
+        <span>201</span>
+        <span>421</span>
+    </div>
+    <button id="odd">Show Odd</button>
+    <button id="even">Show Even</button>
+    <button id="range">Show Range (19-36)</button>
+    <button id="divisible">Show Divisible by 5</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const numbers = document.querySelectorAll('.numbers span');
+    const oddButton = document.getElementById('odd');
+    const evenButton = document.getElementById('even');
+    const rangeButton = document.getElementById('range');
+    const divisibleButton = document.getElementById('divisible');
+
+    oddButton.addEventListener('click', filterOdd);
+    evenButton.addEventListener('click', filterEven);
+    rangeButton.addEventListener('click', filterRange);
+    divisibleButton.addEventListener('click', filterDivisible);
+
+    function filterOdd() {
+        for (const number of numbers) {
+            if (Number(number.innerText) % 2 !== 0) {
+                number.style.display = 'inline-block';
+            } else {
+                number.style.display = 'none';
+            }
+        }
+    }
+
+    function filterEven() {
+        for (const number of numbers) {
+            if (Number(number.innerText) % 2 === 0) {
+                number.style.display = 'inline-block';
+            } else {
+                number.style.display = 'none';
+            }
+        }
+    }
+
+    function filterRange() {
+        for (const number of numbers) {
+            if (Number(number.innerText) >= 19 && Number(number.innerText) <= 36) {
+                number.style.display = 'inline-block';
+            } else {
+                number.style.display = 'none';
+            }
+        }
+    }
+
+    function filterDivisible() {
+        for (const number of numbers) {
+            if (Number(number.innerText) % 5 === 0) {
+                number.style.display = 'inline-block';
+            } else {
+                number.style.display = 'none';
+            }
+        }
+    }
+});
+    </script>
+</body>
+<style>
+    .numbers span {
+    margin-right: 5px;
+    display: none;
+}
+</style>
+</html>
