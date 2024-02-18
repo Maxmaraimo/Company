@@ -36,6 +36,7 @@ ex:
    как в django, так и в drf.
    Короче говоря, вы должны создать систему, которая может использовать операции CRUD
  
+ 
 4. You must use in your project
 - forms (формы)
 - middleware
