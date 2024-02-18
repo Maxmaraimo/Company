@@ -52,7 +52,7 @@
             background-color: rgb(255, 255, 255);
             background-image: url(./шарик.png);
             background-repeat: no-repeat;
-            left: 49.5%;
+            left: 75%;
             top: 48.5%;
             transform: translate(-50%, -50%);
             z-index: 1;
@@ -178,8 +178,22 @@
                 const rotation = 720 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
                 wheel.style.transition = 'transform 5.7s ease-out'; // Updated transition to ease-out
                 wheel.style.transform = `rotate(${rotation}deg)`;
-                ball.style.transition = 'left 5s ease-in-out';
+                ball.style.transition = 'left 0.1s ease-in-out';
                 ball.style.left = '78%'; // Move the ball to the end of the track
+
+                // After the animation finishes, display the winning number and update game state
+                // After the animation finishes, display the winning number and update game state
+                // After the animation finishes, display the winning number and update game state
+                const wheelRotation = 520 + (winningNumber * 9.999); // Each number occupies 9.729 degrees
+                const ballRotation = -3600 + (winningNumber * 100); // Change rotation speed to a faster value
+
+                wheel.style.transition = 'transform 6s ease-out'; // Updated transition to ease-out
+                wheel.style.transform = `rotate(${wheelRotation}deg)`;
+                ball.style.transition = 'transform 0.1s linear'; // Change transition timing function to linear
+                ball.style.transform = `rotate(${ballRotation}deg)`;
+
+                // Calculate the spinning duration (in milliseconds) based on the new transition duration
+                const spinningDuration = 6000; // Adjusted to match the transition duration
 
                 // After the animation finishes, display the winning number and update game state
                 setTimeout(() => {
@@ -188,8 +202,12 @@
                     checkWinningBet(winningNumber);
                     resetSelectedBet();
                     ball.style.transition = ''; // Reset ball animation
-                    ball.style.left = '49.5%'; // Reset ball position
-                }, 5700); // Updated to match the transition duration
+                    ball.style.left = '77.5%'; // Reset ball position
+                    ball.style.transform = 'translate(-40%, -40%)'; // Reset ball translation
+                }, spinningDuration); // Updated to match the spinning duration
+
+
+
             }
         });
 
@@ -212,9 +230,9 @@
             const betAmountElement = document.getElementById('bet-amount');
             if (selectedBet) {
                 const betAmount = selectedBet.type ? 'Even/Odd' : `${selectedBet.start}-${selectedBet.end}`;
-                betAmountElement.textContent = `Current Bet: $${betAmount}`;
+                betAmountElement.textContent = `Текущая ставка: $${betAmount}`;
             } else {
-                betAmountElement.textContent = 'Current Bet: $0';
+                betAmountElement.textContent = 'Текущая ставка: $0';
             }
         }
 
@@ -223,17 +241,17 @@
             const { start, end, type } = selectedBet;
             if (type) {
                 if (type === 'even' && number % 2 === 0) {
-                    messageElement.textContent = 'You won!';
+                    messageElement.textContent = 'Ты выиграл!';
                 } else if (type === 'odd' && number % 2 !== 0) {
-                    messageElement.textContent = 'You won!';
+                    messageElement.textContent = 'Ты выиграл!';
                 } else {
-                    messageElement.textContent = 'You lost!';
+                    messageElement.textContent = 'Ты проиграла!';
                 }
             } else {
                 if (number >= start && number <= end) {
-                    messageElement.textContent = 'You won!';
+                    messageElement.textContent = 'Ты выиграл!';
                 } else {
-                    messageElement.textContent = 'You lost!';
+                    messageElement.textContent = 'Ты проиграла!';
                 }
             }
         }
