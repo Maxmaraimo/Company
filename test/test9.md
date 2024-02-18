@@ -31,6 +31,7 @@ ADD ALL GIT CONFIGURATIONS
 
 ### INSTALL
 
+
 - git clone .... => clones repository
 - cd ... => change directory to that folder
 - npm install => install all dependencies
