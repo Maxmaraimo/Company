@@ -1822,5 +1822,6 @@ class Client(User):
 # print(User.is_adult(user1.age))  # staticmethod
 """
 
+
 # EXERCISES
 # https://pynative.com/python-object-oriented-programming-oop-exercise/
