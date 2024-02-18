@@ -16,6 +16,7 @@ Steps that the project must have:
 
 
 
+
 1. Authentication on both sides of django and drf
 ex: 
     django should have its own authentication system
