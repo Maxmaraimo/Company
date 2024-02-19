@@ -1,6 +1,5 @@
 from random_game import game
 import random
-
 if __name__ == "__main__":
     answer = True
     while answer:
@@ -17,4 +16,3 @@ if __name__ == "__main__":
         except:
             print("Invalid input...")
             continue
-        
