@@ -62,8 +62,6 @@
             width: 15px; /* Decreased ball size */
             height: 15px; /* Decreased ball size */
             border-radius: 50%;
-            background-color: rgb(255, 255, 255);
-            background-image: url(./шарик.png);
             background-repeat: no-repeat;
             left: 75%; /* Adjusted initial position */
             top: 57%; /* Adjusted initial position */
@@ -133,6 +131,24 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 15px;
         }
+        .roulette-wheel-second {
+            width: 255px;
+            height: 255px;
+            border: 1px solid rgba(252, 0, 0, 0);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            color: white;
+            position: absolute;
+            left: 17%;
+            top: 17%; /* Adjust ball position */
+        }
+        .roulette-wheel-second img {
+            position: absolute;
+            left: 20%;
+            top: 10%; /* Adjust ball position */
+        }
     </style>
 </head>
 
@@ -140,7 +156,10 @@
     <div class="container">
         <div class="roulette-wheel-border">
             <div class="roulette-wheel">
-                <img class="ball" src="./шарик.png" alt="">
+                <img class="ball" src="" alt="">
+                <div class="roulette-wheel-second">
+                    <img src="./шарик.png" width="20" height="20" alt="">
+                </div>
             </div>
         </div>
 
@@ -172,6 +191,9 @@
         const ball = document.querySelector('.ball');
         const bettingOptions = document.querySelectorAll('.betting-option');
 
+        const wheelSecond = document.querySelector('.roulette-wheel-second');
+
+
         let isSpinning = false;
         let winningNumber = 0;
         let selectedBet = null;
@@ -186,8 +208,12 @@
 
                 // Animate the wheel spinning
                 const rotation = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheel.style.transition = 'transform 12s ease-out'; // Updated transition to ease-out
+                wheel.style.transition = 'transform 8s ease-out'; // Updated transition to ease-out
                 wheel.style.transform = `rotate(${rotation}deg)`;
+
+                const rotationSecons = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
+                wheelSecond.style.transition = 'transform 12s ease-out';
+                wheelSecond.style.transform = `rotate(${rotationSecons}deg)`;
 
                 // After the animation finishes, display the winning number and update game state
                 const spinningDuration = 10; // Adjusted to match the transition duration
