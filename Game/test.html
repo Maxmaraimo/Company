@@ -176,35 +176,29 @@
         let selectedBet = null;
 
         spinButton.addEventListener('click', () => {
-            if (!isSpinning && selectedBet) {
+            if (!isSpinning) {
                 isSpinning = true;
                 messageElement.textContent = ''; // Clear any previous message
 
                 // Simulate spinning the wheel and determine winning number
-                winningNumber = Math.floor(Math.random() * 37); // 0-36 for numbered pockets
+                winningNumber = Math.floor(Math.random() * 37) + 1; // 0 for green, 1-36 for numbered pockets
 
                 // Animate the wheel spinning
-                const rotation = 1420 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheel.style.transition = 'transform 12s ease-out'; // Updated transition to ease-out
+                const rotation = 720 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
+                wheel.style.transition = 'transform 1.5s ease-out'; // Adjust duration for faster spin
                 wheel.style.transform = `rotate(${rotation}deg)`;
+                // Animate the ball moving along the track
+                const ballRotation = 720 + (winningNumber * 9.729); // Change rotation speed to a faster value
+                ball.style.transition = 'transform 0.5s linear'; // Change transition timing function to linear
+                ball.style.transform = `rotate(${ballRotation}deg)`;
 
                 // After the animation finishes, display the winning number and update game state
-                const spinningDuration = 1200; // Adjusted to match the transition duration
-
-                // Rotate the ball quickly
-                   ball.style.transition = 'left 5s ease-in-out';
-                ball.style.left = '95%'; // Move the ball to the end of the track
-
                 setTimeout(() => {
                     messageElement.textContent = `Winning number: ${winningNumber}`;
                     isSpinning = false;
-                    checkWinningBet(winningNumber);
-                    resetSelectedBet();
-                    ball.style.transition = 'transform 1s ease-in-out'; // Reset ball animation
-                    ball.style.left = '75%'; // Reset ball position
-                    ball.style.top = '57%'; // Reset ball position
-                    ball.style.transform = 'translate(-50%, -50%)'; // Reset ball translation
-                }, spinningDuration); // Updated to match the spinning duration
+                    ball.style.transition = ''; // Reset ball animation
+                    ball.style.left = '70%'; // Reset ball position 
+                }, 1500); // Animation duration is 1.5 seconds
             }
         });
 
