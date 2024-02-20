@@ -6,62 +6,113 @@
     <title>Roulette Game</title>
     <style>
          .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 600px;
-        margin: 0 auto;
-    }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 600px;
+            margin: 0 auto;
+        }
 
-    .roulette-wheel {
-        width: 300px;
-        height: 300px;
-        border: 1px solid black;
-        border-radius: 50%;
-        position: relative;
-        overflow: hidden;
-    }
+        .roulette-wheel {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+        .roulette-wheel-second {
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(252, 0, 0, 0.936);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            color: white;
+            position: absolute;
+            left: 1%;
+            top: 1%; /* Adjust ball position */
+        }
+        
+        .roulette-wheel-second img {
+            position: absolute;
+            left: 20%;
+            top: 12%; /* Adjust ball position */
+        }
 
-    .ball-track {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 2px solid black;
-        border-radius: 50%;
-        box-sizing: border-box;
-    }
+        .ball-track {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
 
-    .ball {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: red;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
+        .ball {
+            position: absolute;
+            width: 15px; /* Adjust ball size */
+            height: 15px; /* Adjust ball size */
+            border-radius: 50%;
+            background-color: red;
+            left: 50%;
+            top: 50%; /* Adjust ball position */
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            animation: spinBall 1s linear forwards; /* Added animation */
+        }
+        .ball-track-second {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
 
-    .segment {
-        position: absolute;
-        width: 0;
-        height: 50%;
-        border: 1px solid black;
-        transform-origin: bottom;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+        .ball-second {
+            position: absolute;
+            width: 15px; /* Adjust ball size */
+            height: 15px; /* Adjust ball size */
+            border-radius: 50%;
+            background-color: red;
+            left: 50%;
+            top: 50%; /* Adjust ball position */
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            animation: spinBall 1s linear forwards; /* Added animation */
+        }
+
+        @keyframes spinBall {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .segment {
+            position: absolute;
+            width: 0;
+            height: 50%;
+            border: 1px solid black;
+            transform-origin: bottom;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     </style>
 </head>
 <body>
+
+    
     <div class="container">
         <div class="roulette-wheel">
             <div class="ball-track"></div>
-            <div></div>
-            <img  class="ball" src="./шарик.png" alt="">
+            <div class="ball"></div> <!-- Changed from img to div -->
+            <div class="roulette-wheel-second">
+                <img src="./шарик.png" width="30" height="30" alt="">
+            </div> <!-- Changed from img to div -->
+
             <!-- Add wheel segments dynamically with JavaScript -->
         </div>
         <div class="betting-table">
@@ -83,11 +134,23 @@
         </div>
         <div id="message"></div>
     </div>
+
+
+
+
+
+    
+
+
+
     <script>
          const spinButton = document.getElementById('spin-button');
         const messageElement = document.getElementById('message');
         const wheel = document.querySelector('.roulette-wheel');
         const ball = document.querySelector('.ball');
+
+        const wheelSecond = document.querySelector('.roulette-wheel-second');
+
 
         let isSpinning = false;
         let winningNumber = 0;
@@ -103,18 +166,23 @@
 
                 // Animate the wheel spinning
                 const rotation = 720 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheel.style.transition = 'transform 5s ease-in-out';
+                wheel.style.transition = 'transform 3s ease-out';
                 wheel.style.transform = `rotate(${rotation}deg)`;
+
+
+                const rotationSecons = 720 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
+                wheelSecond.style.transition = 'transform 3s ease-out';
+                wheelSecond.style.transform = `rotate(${rotationSecons}deg)`;
                 // Animate the ball moving along the track
-                ball.style.transition = 'left 5s ease-in-out';
-                ball.style.left = '95%'; // Move the ball to the end of the track
+                ball.style.transition = 'transform 1s linear'; // Change transition timing function to linear
+                ball.style.transform = `rotate(240deg)`;
 
                 // After the animation finishes, display the winning number and update game state
                 setTimeout(() => {
                     messageElement.textContent = `Winning number: ${winningNumber}`;
                     isSpinning = false;
                     ball.style.transition = ''; // Reset ball animation
-                    ball.style.left = '50%'; // Reset ball position
+                    ball.style.left = '70%'; // Reset ball position
                 }, 5000); // Animation duration is 5 seconds
             }
         });
