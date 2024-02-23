@@ -135,6 +135,7 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 15px;
         }
+
         .roulette-wheel-second {
             width: 255px;
             height: 255px;
@@ -156,10 +157,11 @@
             top: 10%;
             /* Adjust ball position */
         }
-        
-        .first_part_stavka  {
+
+        .first_part_stavka {
             width: 700px;
         }
+
         .stavka .first_part_stavka button {
             padding: 5px;
             width: 50px;
@@ -174,9 +176,11 @@
         .stavka .first_part_stavka .redButton {
             background-color: red;
         }
+
         .stavka .first_part_stavka .blackButton {
             background-color: black;
         }
+
         .stavka .first_part_stavka .endButton {
             background-color: rgba(0, 0, 0, 0);
         }
@@ -293,16 +297,16 @@
                 wheel.style.transition = 'transform 8s ease-out'; // Updated transition to ease-out
                 wheel.style.transform = `rotate(${rotation}deg)`;
 
-                const rotationSecons = 5523 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheelSecond.style.transition = 'transform 12s ease-out';
-                wheelSecond.style.transform = `rotate(${rotationSecons}deg)`;
+                const rotationSecond = 5523 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
+                wheelSecond.style.transition = 'transform 12s ease-out'; // Corrected transition duration
+                wheelSecond.style.transform = `rotate(${rotationSecond}deg)`;
 
                 // After the animation finishes, display the winning number and update game state
-                const spinningDuration = 11568; // Adjusted to match the transition duration
+                const spinningDuration = 12000; // Adjusted to match the transition duration
 
                 // Rotate the ball quickly
                 const ballRotation = 17600 + (winningNumber * 120); // Change rotation speed to a faster value
-                ball.style.transition = 'transform 2s linear'; // Change transition timing function to linear
+                ball.style.transition = 'transform 3s linear'; // Change transition timing function to linear
                 ball.style.transform = `rotate(${ballRotation}deg)`;
                 setTimeout(() => {
                     messageElement.textContent = `Winning number: ${winningNumber}`;
@@ -316,6 +320,7 @@
                 }, spinningDuration); // Updated to match the spinning duration
             }
         });
+
 
 
 
