@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roulette Game</title>
     <style>
-         .container {
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,6 +23,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .roulette-wheel-second {
             width: 300px;
             height: 300px;
@@ -33,13 +35,13 @@
             color: white;
             position: absolute;
             left: 1%;
-            top: 1%; /* Adjust ball position */
+            top: 1%;
         }
-        
+
         .roulette-wheel-second img {
             position: absolute;
             left: 20%;
-            top: 12%; /* Adjust ball position */
+            top: 12%;
         }
 
         .ball-track {
@@ -53,16 +55,18 @@
 
         .ball {
             position: absolute;
-            width: 15px; /* Adjust ball size */
-            height: 15px; /* Adjust ball size */
+            width: 15px;
+            height: 15px;
             border-radius: 50%;
             background-color: red;
             left: 50%;
-            top: 50%; /* Adjust ball position */
+            top: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
-            animation: spinBall 1s linear forwards; /* Added animation */
+            animation: spinBall 1s linear forwards;
+            /* Added animation */
         }
+
         .ball-track-second {
             position: absolute;
             width: 100%;
@@ -74,20 +78,29 @@
 
         .ball-second {
             position: absolute;
-            width: 15px; /* Adjust ball size */
-            height: 15px; /* Adjust ball size */
+            width: 15px;
+            /* Adjust ball size */
+            height: 15px;
+            /* Adjust ball size */
             border-radius: 50%;
             background-color: red;
             left: 50%;
-            top: 50%; /* Adjust ball position */
+            top: 50%;
+            /* Adjust ball position */
             transform: translate(-50%, -50%);
             z-index: 1;
-            animation: spinBall 1s linear forwards; /* Added animation */
+            animation: spinBall 1s linear forwards;
+            /* Added animation */
         }
 
         @keyframes spinBall {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
 
         .segment {
@@ -102,9 +115,10 @@
         }
     </style>
 </head>
+
 <body>
 
-    
+
     <div class="container">
         <div class="roulette-wheel">
             <div class="ball-track"></div>
@@ -137,7 +151,7 @@
 
 
     <script>
-         const spinButton = document.getElementById('spin-button');
+        const spinButton = document.getElementById('spin-button');
         const messageElement = document.getElementById('message');
         const wheel = document.querySelector('.roulette-wheel');
         const ball = document.querySelector('.ball');
@@ -148,16 +162,14 @@
         let isSpinning = false;
         let winningNumber = 0;
 
-        
+
         spinButton.addEventListener('click', () => {
             if (!isSpinning) {
                 isSpinning = true;
                 messageElement.textContent = ''; // Clear any previous message
 
-                // Simulate spinning the wheel and determine winning number
                 winningNumber = Math.floor(Math.random() * 37) + 1; // 0 for green, 1-36 for numbered pockets
 
-                // Animate the wheel spinning
                 const rotation = 720 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
                 wheel.style.transition = 'transform 3s ease-out';
                 wheel.style.transform = `rotate(${rotation}deg)`;
@@ -170,7 +182,6 @@
                 ball.style.transition = 'transform 1s linear'; // Change transition timing function to linear
                 ball.style.transform = `rotate(240deg)`;
 
-                // After the animation finishes, display the winning number and update game state
                 setTimeout(() => {
                     messageElement.textContent = `Winning number: ${winningNumber}`;
                     isSpinning = false;
@@ -179,11 +190,9 @@
                 }, 5000); // Animation duration is 5 seconds
             }
         });
-        
 
-        // Add functions for placing bets, checking wins, etc.
 
-        // Dynamically generate wheel segments
+
         const wheelSegments = document.querySelector('.roulette-wheel');
         for (let i = 0; i < 37; i++) {
             const segment = document.createElement('div');
@@ -199,4 +208,5 @@
         background-color: rgba(0, 0, 0, 0.654);
     }
 </style>
+
 </html>
