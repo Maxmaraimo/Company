@@ -1,13 +1,4 @@
-test4.
-```
-functions 4 with js and python.
-```
-lending test 4
 
-```
-game
-```
-```
 # Vue-project
 
 1. git clone "https..."
