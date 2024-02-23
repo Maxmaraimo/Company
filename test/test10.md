@@ -1,13 +1,4 @@
-test10.
-```
-functions 10 with js and python.
-```
-lending test 10
 
-```
-game
-```
-```
 # Fullstack group project
 
 Here we can go step by step:
