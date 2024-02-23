@@ -155,7 +155,6 @@
             position: absolute;
             left: 20%;
             top: 10%;
-            /* Adjust ball position */
         }
         
         .first_part_stavka  {
@@ -286,7 +285,6 @@
                 isSpinning = true;
                 messageElement.textContent = ''; // Clear any previous message
 
-                // Simulate spinning the wheel and determine winning number
                 winningNumber = Math.floor(Math.random() * 37); // 0-36 for numbered pockets
 
                 // Animate the wheel spinning
@@ -390,7 +388,6 @@
             }
         }
 
-        // Dynamically generate wheel segments
         const wheelSegments = document.querySelector('.roulette-wheel');
         for (let i = 0; i < 37; i++) {
             const segment = document.createElement('div');
