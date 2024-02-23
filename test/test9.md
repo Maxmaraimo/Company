@@ -1,13 +1,4 @@
-test9.
-```
-functions 9 with js and python.
-```
-lending test 9
 
-```
-game
-```
-```
 ADD ALL GIT CONFIGURATIONS
 
 1. git config --global user.name "Ozodbek"
