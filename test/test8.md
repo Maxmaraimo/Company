@@ -1,13 +1,4 @@
-test8.
-```
-functions 8 with js and python.
-```
-lending test 8
 
-```
-game
-```
-```
 
 # Introduction
 1. From telegram BotFather you will get a token that you need to get started with the bot. 
