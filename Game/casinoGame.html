@@ -10,7 +10,6 @@
         <div class="roulette-wheel">
             <div class="ball-track"></div>
             <div class="ball"></div>
-            <!-- Add wheel segments dynamically with JavaScript -->
         </div>
         <div class="betting-table">
             <p>Betting options go here</p>
@@ -35,14 +34,11 @@
                 isSpinning = true;
                 messageElement.textContent = ''; // Clear any previous message
                 
-                // Simulate spinning the wheel and determine winning number
                 winningNumber = Math.floor(Math.random() * 37) + 1; // 0 for green, 1-36 for numbered pockets
                 
-                // Animate the wheel spinning
                 wheel.style.transition = 'transform 2.7s ease-in-out';
                 wheel.style.transform = `rotate(${720 + (winningNumber * 9.720)}deg)`; // Each number occupies 9.729 degrees
                 
-                // After the animation finishes, display the winning number and update game state
                 setTimeout(() => {
                     messageElement.textContent = `Winning number: ${winningNumber}`;
                     isSpinning = false;
@@ -50,9 +46,7 @@
             }
         });
 
-        // Add functions for placing bets, checking wins, etc.
 
-        // Dynamically generate wheel segments
         const wheelSegments = document.querySelector('.roulette-wheel');
         for (let i = 0; i < 37; i++) {
             const segment = document.createElement('div');
