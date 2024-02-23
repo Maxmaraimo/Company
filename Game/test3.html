@@ -60,15 +60,11 @@
         .ball {
             position: absolute;
             width: 15px;
-            /* Decreased ball size */
             height: 15px;
-            /* Decreased ball size */
             border-radius: 50%;
             background-repeat: no-repeat;
             left: 75%;
-            /* Adjusted initial position */
             top: 57%;
-            /* Adjusted initial position */
             transform: translate(-50%, -50%);
             z-index: 1;
             transition: transform 5s ease-in-out;
@@ -148,14 +144,12 @@
             position: absolute;
             left: 17%;
             top: 17%;
-            /* Adjust ball position */
         }
 
         .roulette-wheel-second img {
             position: absolute;
             left: 20%;
             top: 10%;
-            /* Adjust ball position */
         }
         
         .first_part_stavka  {
@@ -286,10 +280,8 @@
                 isSpinning = true;
                 messageElement.textContent = ''; // Clear any previous message
 
-                // Simulate spinning the wheel and determine winning number
                 winningNumber = Math.floor(Math.random() * 37); // 0-36 for numbered pockets
 
-                // Animate the wheel spinning
                 const rotation = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
                 wheel.style.transition = 'transform 8s ease-out'; // Updated transition to ease-out
                 wheel.style.transform = `rotate(${rotation}deg)`;
@@ -390,7 +382,6 @@
             }
         }
 
-        // Dynamically generate wheel segments
         const wheelSegments = document.querySelector('.roulette-wheel');
         for (let i = 0; i < 37; i++) {
             const segment = document.createElement('div');
