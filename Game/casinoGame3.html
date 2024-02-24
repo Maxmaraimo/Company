@@ -60,15 +60,11 @@
         .ball {
             position: absolute;
             width: 15px;
-            /* Decreased ball size */
             height: 15px;
-            /* Decreased ball size */
             border-radius: 50%;
             background-repeat: no-repeat;
             left: 75%;
-            /* Adjusted initial position */
             top: 57%;
-            /* Adjusted initial position */
             transform: translate(-50%, -50%);
             z-index: 1;
             transition: transform 5s ease-in-out;
@@ -148,7 +144,6 @@
             position: absolute;
             left: 17%;
             top: 17%;
-            /* Adjust ball position */
         }
 
         .roulette-wheel-second img {
@@ -156,10 +151,11 @@
             left: 20%;
             top: 10%;
         }
-        
-        .first_part_stavka  {
+
+        .first_part_stavka {
             width: 700px;
         }
+
         .stavka .first_part_stavka button {
             padding: 5px;
             width: 50px;
@@ -174,9 +170,11 @@
         .stavka .first_part_stavka .redButton {
             background-color: red;
         }
+
         .stavka .first_part_stavka .blackButton {
             background-color: black;
         }
+
         .stavka .first_part_stavka .endButton {
             background-color: rgba(0, 0, 0, 0);
         }
@@ -246,18 +244,13 @@
 
         <br>
         <div class="pawn">
-            <img src="./10.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 19, 36)">
-            <img src="./50.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 1, 12)">
-            <img src="./100.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 13, 24)">
-            <img src="./500.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 25, 36)">
-            <img src="./1000.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 1, 35, 'odd')">
+            <!-- Your betting chip images here -->
         </div>
 
         <div class="controls">
             <button id="spin-button">Spin</button>
             <span id="bet-amount">Current Bet: 0</span><br>
             <span id="bet-amountTwo">Current Bet: $0</span>
-
         </div>
 
         <div id="message"></div>
@@ -271,37 +264,24 @@
         const ball = document.querySelector('.ball');
         const bettingOptions = document.querySelectorAll('.betting-option');
 
-        const wheelSecond = document.querySelector('.roulette-wheel-second');
-
-
         let isSpinning = false;
         let winningNumber = 0;
         let selectedBet = null;
         let selectedBetTwo = null;
 
-
         spinButton.addEventListener('click', () => {
             if (!isSpinning && selectedBet) {
                 isSpinning = true;
-                messageElement.textContent = ''; // Clear any previous message
+                messageElement.textContent = '';
 
-                winningNumber = Math.floor(Math.random() * 37); // 0-36 for numbered pockets
+                winningNumber = Math.floor(Math.random() * 37);
 
-                // Animate the wheel spinning
-                const rotation = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheel.style.transition = 'transform 10s ease-out'; // Updated transition to ease-out
+                const rotation = -5520 - (winningNumber * 9.729); // Adjusted wheel rotation
+                wheel.style.transition = 'transform 10s ease-out';
                 wheel.style.transform = `rotate(${rotation}deg)`;
 
-                const rotationSecons = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheelSecond.style.transition = 'transform 12s ease-out';
-                wheelSecond.style.transform = `rotate(${rotationSecons}deg)`;
-
-                // After the animation finishes, display the winning number and update game state
-                const spinningDuration = 1220; // Adjusted to match the transition duration
-
-                // Rotate the ball quickly
-                const ballRotation = 4500 + (winningNumber * 120); // Change rotation speed to a faster value
-                ball.style.transition = 'transform 13s linear'; // Change transition timing function to linear
+                const ballRotation = -360 * 3 - (winningNumber * 9.729); // Adjusted ball rotation
+                ball.style.transition = 'transform 13s linear';
                 ball.style.transform = `rotate(${ballRotation}deg)`;
 
                 setTimeout(() => {
@@ -309,19 +289,16 @@
                     isSpinning = false;
                     checkWinningBet(winningNumber);
                     resetSelectedBet();
-                    ball.style.transition = 'transform 1s ease-out'; // Reset ball animation
-                    ball.style.left = '75%'; // Reset ball position
-                    ball.style.top = '57%'; // Reset ball position
-                    ball.style.transform = 'translate(-50%, -50%)'; // Reset ball translation
-                }, spinningDuration); // Updated to match the spinning duration
+                    ball.style.transition = 'transform 1s ease-out';
+                    ball.style.transform = 'rotate(0deg)'; // Reset ball rotation
+                }, 13000); // Adjusted to match the spinning duration
             }
         });
 
-
-        function selectBet(option, start, end, type = null) {
+        function selectBet(option, number) {
             resetSelectedBet();
             option.classList.add('selected');
-            selectedBet = { start, end, type };
+            selectedBet = number;
             updateBetAmount();
         }
 
@@ -336,65 +313,19 @@
         function updateBetAmount() {
             const betAmountElement = document.getElementById('bet-amount');
             if (selectedBet) {
-                const betAmount = selectedBet.type ? 'Even/Odd' : `${selectedBet.start}-${selectedBet.end}`;
-                betAmountElement.textContent = `Current Bet: ${betAmount}`;
+                betAmountElement.textContent = `Current Bet: ${selectedBet}`;
             } else {
                 betAmountElement.textContent = 'Current Bet: 0';
             }
         }
 
-        function selectBetTwo(option, start, end, type = null) {
-            resetSelectedBetTwo();
-            option.classList.add('selected');
-            selectedBetTwo = { start, end, type };
-            updateBetAmountTwo();
-        }
-
-        function resetSelectedBetTwo() {
-            bettingOptions.forEach(option => {
-                option.classList.remove('selected');
-            });
-            selectedBetTwo = null;
-            updateBetAmountTwo();
-        }
-
-        function updateBetAmountTwo() {
-            const betAmountElementTwo = document.getElementById('bet-amountTwo');
-            if (selectedBetTwo) {
-                const betAmount = selectedBetTwo.type ? 'Even/Odd' : `${selectedBetTwo.start}-${selectedBetTwo.end}`;
-                betAmountElementTwo.textContent = `Current Bet: $${betAmount}`;
-            } else {
-                betAmountElementTwo.textContent = 'Current Bet: $0';
-            }
-        }
-
         function checkWinningBet(number) {
             if (!selectedBet) return;
-            const { start, end, type } = selectedBet;
-            if (type) {
-                if (type === 'even' && number % 2 === 0) {
-                    messageElement.textContent = 'You win!';
-                } else if (type === 'odd' && number % 2 !== 0) {
-                    messageElement.textContent = 'You win!';
-                } else {
-                    messageElement.textContent = 'You lose!';
-                }
+            if (number === selectedBet) {
+                messageElement.textContent = 'You win!';
             } else {
-                if (number >= start && number <= end) {
-                    messageElement.textContent = 'You win!';
-                } else {
-                    messageElement.textContent = 'You lose!';
-                }
+                messageElement.textContent = 'You lose!';
             }
-        }
-
-        const wheelSegments = document.querySelector('.roulette-wheel');
-        for (let i = 0; i < 37; i++) {
-            const segment = document.createElement('div');
-            segment.classList.add('segment');
-            segment.textContent = i;
-            segment.style.transform = `rotate(${i * 9.729}deg)`; // Each number occupies 9.729 degrees
-            wheelSegments.appendChild(segment);
         }
     </script>
 </body>
