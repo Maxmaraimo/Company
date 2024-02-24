@@ -60,11 +60,15 @@
         .ball {
             position: absolute;
             width: 15px;
+            /* Decreased ball size */
             height: 15px;
+            /* Decreased ball size */
             border-radius: 50%;
             background-repeat: no-repeat;
             left: 75%;
+            /* Adjusted initial position */
             top: 57%;
+            /* Adjusted initial position */
             transform: translate(-50%, -50%);
             z-index: 1;
             transition: transform 5s ease-in-out;
@@ -144,17 +148,20 @@
             position: absolute;
             left: 17%;
             top: 17%;
+            /* Adjust ball position */
         }
 
         .roulette-wheel-second img {
             position: absolute;
             left: 20%;
             top: 10%;
+            /* Adjust ball position */
         }
-        
-        .first_part_stavka  {
+
+        .first_part_stavka {
             width: 700px;
         }
+
         .stavka .first_part_stavka button {
             padding: 5px;
             width: 50px;
@@ -169,9 +176,11 @@
         .stavka .first_part_stavka .redButton {
             background-color: red;
         }
+
         .stavka .first_part_stavka .blackButton {
             background-color: black;
         }
+
         .stavka .first_part_stavka .endButton {
             background-color: rgba(0, 0, 0, 0);
         }
@@ -280,24 +289,25 @@
                 isSpinning = true;
                 messageElement.textContent = ''; // Clear any previous message
 
+                // Simulate spinning the wheel and determine winning number
                 winningNumber = Math.floor(Math.random() * 37); // 0-36 for numbered pockets
 
+                // Animate the wheel spinning
                 const rotation = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
                 wheel.style.transition = 'transform 8s ease-out'; // Updated transition to ease-out
                 wheel.style.transform = `rotate(${rotation}deg)`;
 
-                const rotationSecons = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheelSecond.style.transition = 'transform 12s ease-out';
-                wheelSecond.style.transform = `rotate(${rotationSecons}deg)`;
+                const rotationSecond = 5523 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
+                wheelSecond.style.transition = 'transform 12s ease-out'; // Corrected transition duration
+                wheelSecond.style.transform = `rotate(${rotationSecond}deg)`;
 
                 // After the animation finishes, display the winning number and update game state
-                const spinningDuration = 11568; // Adjusted to match the transition duration
+                const spinningDuration = 12000; // Adjusted to match the transition duration
 
                 // Rotate the ball quickly
                 const ballRotation = 17600 + (winningNumber * 120); // Change rotation speed to a faster value
-                ball.style.transition = 'transform 2s linear'; // Change transition timing function to linear
+                ball.style.transition = 'transform 3s linear'; // Change transition timing function to linear
                 ball.style.transform = `rotate(${ballRotation}deg)`;
-
                 setTimeout(() => {
                     messageElement.textContent = `Winning number: ${winningNumber}`;
                     isSpinning = false;
@@ -310,6 +320,8 @@
                 }, spinningDuration); // Updated to match the spinning duration
             }
         });
+
+
 
 
         function selectBet(option, start, end, type = null) {
@@ -331,9 +343,9 @@
             const betAmountElement = document.getElementById('bet-amount');
             if (selectedBet) {
                 const betAmount = selectedBet.type ? 'Even/Odd' : `${selectedBet.start}-${selectedBet.end}`;
-                betAmountElement.textContent = `Current Bet: $${betAmount}`;
+                betAmountElement.textContent = `Current Bet: ${betAmount}`;
             } else {
-                betAmountElement.textContent = 'Current Bet: $0';
+                betAmountElement.textContent = 'Current Bet: 0';
             }
         }
 
@@ -382,6 +394,7 @@
             }
         }
 
+        // Dynamically generate wheel segments
         const wheelSegments = document.querySelector('.roulette-wheel');
         for (let i = 0; i < 37; i++) {
             const segment = document.createElement('div');
