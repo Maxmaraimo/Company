@@ -60,11 +60,15 @@
         .ball {
             position: absolute;
             width: 15px;
+            /* Decreased ball size */
             height: 15px;
+            /* Decreased ball size */
             border-radius: 50%;
             background-repeat: no-repeat;
             left: 75%;
+            /* Adjusted initial position */
             top: 57%;
+            /* Adjusted initial position */
             transform: translate(-50%, -50%);
             z-index: 1;
             transition: transform 5s ease-in-out;
@@ -144,12 +148,14 @@
             position: absolute;
             left: 17%;
             top: 17%;
+            /* Adjust ball position */
         }
 
         .roulette-wheel-second img {
             position: absolute;
             left: 20%;
             top: 10%;
+            /* Adjust ball position */
         }
 
         .first_part_stavka {
@@ -178,6 +184,23 @@
         .stavka .first_part_stavka .endButton {
             background-color: rgba(0, 0, 0, 0);
         }
+
+        .stavka .grids {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .stavka .zero_button img {
+            margin: -10px -5px;
+        }
+
+        .endCasino {
+            background-color: red;
+            width: 700px;
+            height: 30px;
+            margin: 0px -1px;
+        }
     </style>
 </head>
 
@@ -195,62 +218,81 @@
 
         <br>
         <div class="stavka">
-            <div class="first_part_stavka">
-                <button class="redButton" onclick="selectBet(this, 3)">3</button>
-                <button class="blackButton" onclick="selectBet(this, 6)">6</button>
-                <button class="redButton" onclick="selectBet(this, 9)">9</button>
-                <button class="blackButton" onclick="selectBet(this, 12)">12</button>
-                <button class="redButton" onclick="selectBet(this, 15)">15</button>
-                <button class="blackButton" onclick="selectBet(this, 18)">18</button>
-                <button class="redButton" onclick="selectBet(this, 21)">21</button>
-                <button class="blackButton" onclick="selectBet(this, 24)">24</button>
-                <button class="redButton" onclick="selectBet(this, 27)">27</button>
-                <button class="blackButton" onclick="selectBet(this, 30)">30</button>
-                <button class="redButton" onclick="selectBet(this, 33)">33</button>
-                <button class="blackButton" onclick="selectBet(this, 36)">36</button>
-                <button class="endButton">2tol</button>
-            </div>
-            <div class="first_part_stavka">
-                <button class="blackButton" onclick="selectBet(this, 2)">2</button>
-                <button class="redButton" onclick="selectBet(this, 5)">5</button>
-                <button class="blackButton" onclick="selectBet(this, 8)">8</button>
-                <button class="redButton" onclick="selectBet(this, 11)">11</button>
-                <button class="blackButton" onclick="selectBet(this, 14)">14</button>
-                <button class="redButton" onclick="selectBet(this, 17)">17</button>
-                <button class="blackButton" onclick="selectBet(this, 20)">20</button>
-                <button class="redButton" onclick="selectBet(this, 23)">23</button>
-                <button class="blackButton" onclick="selectBet(this, 26)">26</button>
-                <button class="redButton" onclick="selectBet(this, 29)">29</button>
-                <button class="blackButton" onclick="selectBet(this, 32)">32</button>
-                <button class="redButton" onclick="selectBet(this, 35)">35</button>
-                <button class="endButton">2tol</button>
-            </div>
-            <div class="first_part_stavka">
-                <button class="redButton" onclick="selectBet(this, 1)">1</button>
-                <button class="blackButton" onclick="selectBet(this, 4)">4</button>
-                <button class="redButton" onclick="selectBet(this, 7)">7</button>
-                <button class="blackButton" onclick="selectBet(this, 10)">10</button>
-                <button class="redButton" onclick="selectBet(this, 13)">13</button>
-                <button class="blackButton" onclick="selectBet(this, 16)">16</button>
-                <button class="redButton" onclick="selectBet(this, 19)">19</button>
-                <button class="blackButton" onclick="selectBet(this, 22)">22</button>
-                <button class="redButton" onclick="selectBet(this, 25)">25</button>
-                <button class="blackButton" onclick="selectBet(this, 28)">28</button>
-                <button class="redButton" onclick="selectBet(this, 31)">31</button>
-                <button class="blackButton" onclick="selectBet(this, 34)">34</button>
-                <button class="endButton">2tol</button>
+            <div class="grids">
+                <div class="zero_button">
+                    <img src="./2024-02-25 23.58.02.jpg" height="170" alt="">
+                </div>
+
+                <div class="secondGrid">
+
+                    <div class="first_part_stavka">
+                        <button class="redButton" onclick="selectBet(this, 3)">3</button>
+                        <button class="blackButton" onclick="selectBet(this, 6)">6</button>
+                        <button class="redButton" onclick="selectBet(this, 9)">9</button>
+                        <button class="blackButton" onclick="selectBet(this, 12)">12</button>
+                        <button class="redButton" onclick="selectBet(this, 15)">15</button>
+                        <button class="blackButton" onclick="selectBet(this, 18)">18</button>
+                        <button class="redButton" onclick="selectBet(this, 21)">21</button>
+                        <button class="blackButton" onclick="selectBet(this, 24)">24</button>
+                        <button class="redButton" onclick="selectBet(this, 27)">27</button>
+                        <button class="blackButton" onclick="selectBet(this, 30)">30</button>
+                        <button class="redButton" onclick="selectBet(this, 33)">33</button>
+                        <button class="blackButton" onclick="selectBet(this, 36)">36</button>
+                        <button class="endButton">2tol</button>
+                    </div>
+                    <div class="first_part_stavka">
+                        <button class="blackButton" onclick="selectBet(this, 2)">2</button>
+                        <button class="redButton" onclick="selectBet(this, 5)">5</button>
+                        <button class="blackButton" onclick="selectBet(this, 8)">8</button>
+                        <button class="redButton" onclick="selectBet(this, 11)">11</button>
+                        <button class="blackButton" onclick="selectBet(this, 14)">14</button>
+                        <button class="redButton" onclick="selectBet(this, 17)">17</button>
+                        <button class="blackButton" onclick="selectBet(this, 20)">20</button>
+                        <button class="redButton" onclick="selectBet(this, 23)">23</button>
+                        <button class="blackButton" onclick="selectBet(this, 26)">26</button>
+                        <button class="redButton" onclick="selectBet(this, 29)">29</button>
+                        <button class="blackButton" onclick="selectBet(this, 32)">32</button>
+                        <button class="redButton" onclick="selectBet(this, 35)">35</button>
+                        <button class="endButton">2tol</button>
+                    </div>
+                    <div class="first_part_stavka">
+                        <button class="redButton" onclick="selectBet(this, 1)">1</button>
+                        <button class="blackButton" onclick="selectBet(this, 4)">4</button>
+                        <button class="redButton" onclick="selectBet(this, 7)">7</button>
+                        <button class="blackButton" onclick="selectBet(this, 10)">10</button>
+                        <button class="redButton" onclick="selectBet(this, 13)">13</button>
+                        <button class="blackButton" onclick="selectBet(this, 16)">16</button>
+                        <button class="redButton" onclick="selectBet(this, 19)">19</button>
+                        <button class="blackButton" onclick="selectBet(this, 22)">22</button>
+                        <button class="redButton" onclick="selectBet(this, 25)">25</button>
+                        <button class="blackButton" onclick="selectBet(this, 28)">28</button>
+                        <button class="redButton" onclick="selectBet(this, 31)">31</button>
+                        <button class="blackButton" onclick="selectBet(this, 34)">34</button>
+                        <button class="endButton">2tol</button>
+                    </div>
+                    <div class="endCasino">
+                        <img src="./2024-02-26 00.04.16.jpg" width="700px" alt="">
+                    </div>   
+                </div>
+
             </div>
         </div>
+        
+        <br><br><br><br><br><br>
 
-        <br>
         <div class="pawn">
-            <!-- Your betting chip images here -->
+            <img src="./10.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 19, 36)">
+            <img src="./50.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 1, 12)">
+            <img src="./100.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 13, 24)">
+            <img src="./500.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 25, 36)">
+            <img src="./1000.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 1, 35, 'odd')">
         </div>
 
         <div class="controls">
             <button id="spin-button">Spin</button>
             <span id="bet-amount">Current Bet: 0</span><br>
             <span id="bet-amountTwo">Current Bet: $0</span>
+
         </div>
 
         <div id="message"></div>
@@ -264,41 +306,59 @@
         const ball = document.querySelector('.ball');
         const bettingOptions = document.querySelectorAll('.betting-option');
 
+        const wheelSecond = document.querySelector('.roulette-wheel-second');
+
+
         let isSpinning = false;
         let winningNumber = 0;
         let selectedBet = null;
         let selectedBetTwo = null;
 
+
         spinButton.addEventListener('click', () => {
             if (!isSpinning && selectedBet) {
                 isSpinning = true;
-                messageElement.textContent = '';
+                messageElement.textContent = ''; // Clear any previous message
 
-                winningNumber = Math.floor(Math.random() * 37);
+                // Simulate spinning the wheel and determine winning number
+                winningNumber = Math.floor(Math.random() * 37); // 0-36 for numbered pockets
 
-                const rotation = -5520 - (winningNumber * 9.729); // Adjusted wheel rotation
-                wheel.style.transition = 'transform 10s ease-out';
+                // Animate the wheel spinning
+                const rotation = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
+                wheel.style.transition = 'transform 8s ease-out'; // Updated transition to ease-out
                 wheel.style.transform = `rotate(${rotation}deg)`;
 
-                const ballRotation = -360 * 3 - (winningNumber * 9.729); // Adjusted ball rotation
-                ball.style.transition = 'transform 13s linear';
-                ball.style.transform = `rotate(${ballRotation}deg)`;
+                const rotationSecond = 5523 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
+                wheelSecond.style.transition = 'transform 12s ease-out'; // Corrected transition duration
+                wheelSecond.style.transform = `rotate(${rotationSecond}deg)`;
 
+                // After the animation finishes, display the winning number and update game state
+                const spinningDuration = 12000; // Adjusted to match the transition duration
+
+                // Rotate the ball quickly
+                const ballRotation = 17600 + (winningNumber * 120); // Change rotation speed to a faster value
+                ball.style.transition = 'transform 3s linear'; // Change transition timing function to linear
+                ball.style.transform = `rotate(${ballRotation}deg)`;
                 setTimeout(() => {
                     messageElement.textContent = `Winning number: ${winningNumber}`;
                     isSpinning = false;
                     checkWinningBet(winningNumber);
                     resetSelectedBet();
-                    ball.style.transition = 'transform 1s ease-out';
-                    ball.style.transform = 'rotate(0deg)'; // Reset ball rotation
-                }, 13000); // Adjusted to match the spinning duration
+                    ball.style.transition = 'transform 1s ease-out'; // Reset ball animation
+                    ball.style.left = '75%'; // Reset ball position
+                    ball.style.top = '57%'; // Reset ball position
+                    ball.style.transform = 'translate(-50%, -50%)'; // Reset ball translation
+                }, spinningDuration); // Updated to match the spinning duration
             }
         });
 
-        function selectBet(option, number) {
+
+
+
+        function selectBet(option, start, end, type = null) {
             resetSelectedBet();
             option.classList.add('selected');
-            selectedBet = number;
+            selectedBet = { start, end, type };
             updateBetAmount();
         }
 
@@ -313,19 +373,66 @@
         function updateBetAmount() {
             const betAmountElement = document.getElementById('bet-amount');
             if (selectedBet) {
-                betAmountElement.textContent = `Current Bet: ${selectedBet}`;
+                const betAmount = selectedBet.type ? 'Even/Odd' : `${selectedBet.start}-${selectedBet.end}`;
+                betAmountElement.textContent = `Current Bet: ${betAmount}`;
             } else {
                 betAmountElement.textContent = 'Current Bet: 0';
             }
         }
 
+        function selectBetTwo(option, start, end, type = null) {
+            resetSelectedBetTwo();
+            option.classList.add('selected');
+            selectedBetTwo = { start, end, type };
+            updateBetAmountTwo();
+        }
+
+        function resetSelectedBetTwo() {
+            bettingOptions.forEach(option => {
+                option.classList.remove('selected');
+            });
+            selectedBetTwo = null;
+            updateBetAmountTwo();
+        }
+
+        function updateBetAmountTwo() {
+            const betAmountElementTwo = document.getElementById('bet-amountTwo');
+            if (selectedBetTwo) {
+                const betAmount = selectedBetTwo.type ? 'Even/Odd' : `${selectedBetTwo.start}-${selectedBetTwo.end}`;
+                betAmountElementTwo.textContent = `Current Bet: $${betAmount}`;
+            } else {
+                betAmountElementTwo.textContent = 'Current Bet: $0';
+            }
+        }
+
         function checkWinningBet(number) {
             if (!selectedBet) return;
-            if (number === selectedBet) {
-                messageElement.textContent = 'You win!';
+            const { start, end, type } = selectedBet;
+            if (type) {
+                if (type === 'even' && number % 2 === 0) {
+                    messageElement.textContent = 'You win!';
+                } else if (type === 'odd' && number % 2 !== 0) {
+                    messageElement.textContent = 'You win!';
+                } else {
+                    messageElement.textContent = 'You lose!';
+                }
             } else {
-                messageElement.textContent = 'You lose!';
+                if (number >= start && number <= end) {
+                    messageElement.textContent = 'You win!';
+                } else {
+                    messageElement.textContent = 'You lose!';
+                }
             }
+        }
+
+        // Dynamically generate wheel segments
+        const wheelSegments = document.querySelector('.roulette-wheel');
+        for (let i = 0; i < 37; i++) {
+            const segment = document.createElement('div');
+            segment.classList.add('segment');
+            segment.textContent = i;
+            segment.style.transform = `rotate(${i * 9.729}deg)`; // Each number occupies 9.729 degrees
+            wheelSegments.appendChild(segment);
         }
     </script>
 </body>
