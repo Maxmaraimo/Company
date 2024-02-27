@@ -272,12 +272,12 @@
                     </div>
                     <div class="endCasino">
                         <img src="./2024-02-26 00.04.16.jpg" width="700px" alt="">
-                    </div>   
+                    </div>
                 </div>
 
             </div>
         </div>
-        
+
         <br><br><br><br><br><br>
 
         <div class="pawn">
@@ -329,14 +329,14 @@
                 wheel.style.transform = `rotate(${rotation}deg)`;
 
                 const rotationSecond = 5523 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheelSecond.style.transition = 'transform 12s ease-out'; // Corrected transition duration
+                wheelSecond.style.transition = 'transform 8s ease-out'; // Corrected transition duration
                 wheelSecond.style.transform = `rotate(${rotationSecond}deg)`;
 
                 // After the animation finishes, display the winning number and update game state
-                const spinningDuration = 12000; // Adjusted to match the transition duration
+                const spinningDuration = 8000; // Adjusted to match the transition duration
 
                 // Rotate the ball quickly
-                const ballRotation = 17600 + (winningNumber * 120); // Change rotation speed to a faster value
+                const ballRotation = -17600 + (winningNumber * 120); // Change rotation speed to a faster value
                 ball.style.transition = 'transform 3s linear'; // Change transition timing function to linear
                 ball.style.transform = `rotate(${ballRotation}deg)`;
                 setTimeout(() => {
