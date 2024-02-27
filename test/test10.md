@@ -1,5 +1,5 @@
 
-# Fullstack group project
+# Fullstack1 group project
 
 Here we can go step by step:
 - [DRF React documentation](DRF_React.md)
