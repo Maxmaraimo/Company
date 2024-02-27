@@ -1,4 +1,3 @@
-
 # Fullstack1 group project
 
 Here we can go step by step:
