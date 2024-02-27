@@ -1,4 +1,6 @@
 
+# Fullstack1 group project
+
 ADD ALL GIT CONFIGURATIONS
 
 1. git config --global user.name "Ozodbek"
