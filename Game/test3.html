@@ -278,7 +278,6 @@
             </div>
         </div>
         
-        
         <br><br><br><br><br><br>
 
         <div class="pawn">
@@ -299,7 +298,6 @@
         <div id="message"></div>
     </div>
 
-
     <script>
         const spinButton = document.getElementById('spin-button');
         const messageElement = document.getElementById('message');
@@ -309,52 +307,44 @@
 
         const wheelSecond = document.querySelector('.roulette-wheel-second');
 
-
         let isSpinning = false;
         let winningNumber = 0;
         let selectedBet = null;
         let selectedBetTwo = null;
-
 
         spinButton.addEventListener('click', () => {
             if (!isSpinning && selectedBet) {
                 isSpinning = true;
                 messageElement.textContent = ''; // Clear any previous message
 
-                // Simulate spinning the wheel and determine winning number
-                winningNumber = Math.floor(Math.random() * 37); // 0-36 for numbered pockets
+                winningNumber = Math.floor(Math.random() * 37);
 
-                // Animate the wheel spinning
-                const rotation = 5520 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheel.style.transition = 'transform 8s ease-out'; // Updated transition to ease-out
+                const rotation = 5520 + (winningNumber * 9.729);
+                wheel.style.transition = 'transform 16s ease-out';
                 wheel.style.transform = `rotate(${rotation}deg)`;
 
-                const rotationSecond = 5523 + (winningNumber * 9.729); // Each number occupies 9.729 degrees
-                wheelSecond.style.transition = 'transform 12s ease-out'; // Corrected transition duration
+                const rotationSecond = 5523 + (winningNumber * 9.729);
+                wheelSecond.style.transition = 'transform 16s ease-out'; // Adjusted transition duration
                 wheelSecond.style.transform = `rotate(${rotationSecond}deg)`;
 
-                // After the animation finishes, display the winning number and update game state
-                const spinningDuration = 12000; // Adjusted to match the transition duration
+                const spinningDuration = 16000; // Updated spinning duration
 
-                // Rotate the ball quickly
-                const ballRotation = 17600 + (winningNumber * 120); // Change rotation speed to a faster value
-                ball.style.transition = 'transform 3s linear'; // Change transition timing function to linear
+                const ballRotation = 17600 + (winningNumber * 120); // Faster rotation
+                ball.style.transition = 'transform 3s linear'; // Linear timing function
                 ball.style.transform = `rotate(${ballRotation}deg)`;
+
                 setTimeout(() => {
                     messageElement.textContent = `Winning number: ${winningNumber}`;
                     isSpinning = false;
                     checkWinningBet(winningNumber);
                     resetSelectedBet();
-                    ball.style.transition = 'transform 1s ease-out'; // Reset ball animation
+                    ball.style.transition = 'transform 1s ease-out';
                     ball.style.left = '75%'; // Reset ball position
                     ball.style.top = '57%'; // Reset ball position
                     ball.style.transform = 'translate(-50%, -50%)'; // Reset ball translation
-                }, spinningDuration); // Updated to match the spinning duration
+                }, spinningDuration);
             }
         });
-
-
-
 
         function selectBet(option, start, end, type = null) {
             resetSelectedBet();
@@ -432,7 +422,7 @@
             const segment = document.createElement('div');
             segment.classList.add('segment');
             segment.textContent = i;
-            segment.style.transform = `rotate(${i * 9.729}deg)`; // Each number occupies 9.729 degrees
+            segment.style.transform = `rotate(${i * 9.729}deg)`;
             wheelSegments.appendChild(segment);
         }
     </script>

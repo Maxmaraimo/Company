@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Casino Wheel</title>
+    <style>
+        .wheel {
+            width: 200px;
+            height: 200px;
+            border: 5px solid black;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wheel" id="wheel">
+        <div class="arrow" id="arrow" onclick="spinWheel()">a</div>
+    </div>
+
+    <script>
+        function spinWheel() {
+            var wheel = document.getElementById('wheel');
+            var arrow = document.getElementById('arrow');
+
+            // Generate a random degree for spinning
+            var randomDegree = Math.floor(Math.random() * 360) + 1080; // Add some extra turns for effect
+
+            // Apply the spinning animation
+            wheel.style.transition = 'transform 3s ease-in-out';
+            wheel.style.transform = `rotate(${randomDegree}deg)`;
+
+            // Disable clicking while spinning
+            arrow.style.pointerEvents = 'none';
+
+            // After animation completes, re-enable clicking
+            setTimeout(function () {
+                wheel.style.transition = '';
+                wheel.style.transform = `rotate(${randomDegree % 360}deg)`; // Correcting rotation to a single turn
+                arrow.style.pointerEvents = 'auto';
+            }, 3000); // Adjust time according to transition duration
+        }
+
+    </script>
+</body>
+
+</html>
