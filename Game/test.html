@@ -177,6 +177,12 @@
             background-color: red;
         }
 
+        .stavka .first_part_stavka .redButton:active {
+            background-image: url(./10.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         .stavka .first_part_stavka .blackButton {
             background-color: black;
         }
@@ -204,18 +210,24 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
+
         .toTry {
             background-color: rgb(237, 19, 19);
             padding: 8px;
             border-radius: 7px;
         }
+
         .toTry a {
             text-decoration: none;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 15px;
             color: white;
+        }
+
+        .selected-pawn {
+            border: 2px solid rgb(255, 255, 0);
         }
     </style>
 </head>
@@ -249,47 +261,65 @@
 
                         <div class="first_part_stavka">
                             <button class="redButton" onclick="selectBet(this, 3)">3</button>
-                            <button class="blackButton" onclick="selectBet(this, 6)">6</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 6)">6</button>
                             <button class="redButton" onclick="selectBet(this, 9)">9</button>
-                            <button class="blackButton" onclick="selectBet(this, 12)">12</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 12)">12</button>
                             <button class="redButton" onclick="selectBet(this, 15)">15</button>
-                            <button class="blackButton" onclick="selectBet(this, 18)">18</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 18)">18</button>
                             <button class="redButton" onclick="selectBet(this, 21)">21</button>
-                            <button class="blackButton" onclick="selectBet(this, 24)">24</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 24)">24</button>
                             <button class="redButton" onclick="selectBet(this, 27)">27</button>
-                            <button class="blackButton" onclick="selectBet(this, 30)">30</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 30)">30</button>
                             <button class="redButton" onclick="selectBet(this, 33)">33</button>
-                            <button class="blackButton" onclick="selectBet(this, 36)">36</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 36)">36</button>
                             <button class="endButton">2tol</button>
                         </div>
                         <div class="first_part_stavka">
-                            <button class="blackButton" onclick="selectBet(this, 2)">2</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 2)">2</button>
                             <button class="redButton" onclick="selectBet(this, 5)">5</button>
-                            <button class="blackButton" onclick="selectBet(this, 8)">8</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 8)">8</button>
                             <button class="redButton" onclick="selectBet(this, 11)">11</button>
-                            <button class="blackButton" onclick="selectBet(this, 14)">14</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 14)">14</button>
                             <button class="redButton" onclick="selectBet(this, 17)">17</button>
-                            <button class="blackButton" onclick="selectBet(this, 20)">20</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 20)">20</button>
                             <button class="redButton" onclick="selectBet(this, 23)">23</button>
-                            <button class="blackButton" onclick="selectBet(this, 26)">26</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 26)">26</button>
                             <button class="redButton" onclick="selectBet(this, 29)">29</button>
-                            <button class="blackButton" onclick="selectBet(this, 32)">32</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 32)">32</button>
                             <button class="redButton" onclick="selectBet(this, 35)">35</button>
                             <button class="endButton">2tol</button>
                         </div>
                         <div class="first_part_stavka">
                             <button class="redButton" onclick="selectBet(this, 1)">1</button>
-                            <button class="blackButton" onclick="selectBet(this, 4)">4</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 4)">4</button>
                             <button class="redButton" onclick="selectBet(this, 7)">7</button>
-                            <button class="blackButton" onclick="selectBet(this, 10)">10</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 10)">10</button>
                             <button class="redButton" onclick="selectBet(this, 13)">13</button>
-                            <button class="blackButton" onclick="selectBet(this, 16)">16</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 16)">16</button>
                             <button class="redButton" onclick="selectBet(this, 19)">19</button>
-                            <button class="blackButton" onclick="selectBet(this, 22)">22</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 22)">22</button>
                             <button class="redButton" onclick="selectBet(this, 25)">25</button>
-                            <button class="blackButton" onclick="selectBet(this, 28)">28</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 28)">28</button>
                             <button class="redButton" onclick="selectBet(this, 31)">31</button>
-                            <button class="blackButton" onclick="selectBet(this, 34)">34</button>
+                            <button style="background-color: black;" class="redButton"
+                                onclick="selectBet(this, 34)">34</button>
                             <button class="endButton">2tol</button>
                         </div>
                         <div class="endCasino">
@@ -303,11 +333,11 @@
             <br><br><br><br><br><br>
 
             <div class="pawn">
-                <img src="./10.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 19, 36)">
-                <img src="./50.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 1, 12)">
-                <img src="./100.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 13, 24)">
-                <img src="./500.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 25, 36)">
-                <img src="./1000.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 1, 35, 'odd')">
+                <img src="./10.png" width="50" height="50" alt="" onclick="selectBetTwo(this, './10.png')">
+                <img src="./50.png" width="50" height="50" alt="" onclick="selectBetTwo(this, './50.png')">
+                <img src="./100.png" width="50" height="50" alt="" onclick="selectBetTwo(this, './100.png')">
+                <img src="./500.png" width="50" height="50" alt="" onclick="selectBetTwo(this, './500.png')">
+                <img src="./1000.png" width="50" height="50" alt="" onclick="selectBetTwo(this, './1000.png')">
                 <button id="spin-button">Вращаться</button>
                 <button class="toTry"><a href="./test.html">Попробовать ещё раз</a></button>
 
@@ -315,7 +345,6 @@
 
             <div class="controls">
                 <span id="bet-amount">Current Bet: 0</span><br>
-                <span id="bet-amountTwo">Current Bet: $0</span>
 
             </div>
 
@@ -405,30 +434,25 @@
             }
         }
 
-        function selectBetTwo(option, start, end, type = null) {
-            resetSelectedBetTwo();
-            option.classList.add('selected');
-            selectedBetTwo = { start, end, type };
-            updateBetAmountTwo();
+        function selectBetTwo(option, imageUrl) {
+            // Reset previously selected pawn
+            const selectedPawns = document.querySelectorAll('.selected-pawn');
+            selectedPawns.forEach(pawn => pawn.classList.remove('selected-pawn'));
+
+            // Highlight the currently selected pawn
+            option.classList.add('selected-pawn');
+
+            // Set the background image of redButton and blackButton
+            const redButtons = document.querySelectorAll('.redButton');
+            const blackButtons = document.querySelectorAll('.blackButton');
+
+            redButtons.forEach(button => button.style.backgroundImage = `url(${imageUrl})`);
+            blackButtons.forEach(button => button.style.backgroundImage = `url(${imageUrl})`);
+
+            // Save the selection
+            redButtons.forEach(button => button.dataset.imageUrl = imageUrl);
         }
 
-        function resetSelectedBetTwo() {
-            bettingOptions.forEach(option => {
-                option.classList.remove('selected');
-            });
-            selectedBetTwo = null;
-            updateBetAmountTwo();
-        }
-
-        function updateBetAmountTwo() {
-            const betAmountElementTwo = document.getElementById('bet-amountTwo');
-            if (selectedBetTwo) {
-                const betAmount = selectedBetTwo.type ? 'Even/Odd' : `${selectedBetTwo.start}-${selectedBetTwo.end}`;
-                betAmountElementTwo.textContent = `Current Bet: $${betAmount}`;
-            } else {
-                betAmountElementTwo.textContent = 'Current Bet: $0';
-            }
-        }
 
 
         function checkWinningBet(number) {
@@ -460,6 +484,8 @@
             segment.style.transform = `rotate(${i * 9.729}deg)`; // Each number occupies 9.729 degrees
             wheelSegments.appendChild(segment);
         }
+
+
     </script>
 </body>
 
