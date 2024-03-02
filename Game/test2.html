@@ -201,10 +201,11 @@
             height: 30px;
             margin: 0px -1px;
         }
+
         .container {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
-            
+            grid-template-columns: repeat(2, 1fr);
+
         }
     </style>
 </head>
@@ -222,16 +223,16 @@
                     </div>
                 </div>
             </div>
-    
+
             <br>
             <div class="stavka">
                 <div class="grids">
                     <div class="zero_button">
                         <img src="./2024-02-25 23.58.02.jpg" height="170" alt="">
                     </div>
-    
+
                     <div class="secondGrid">
-    
+
                         <div class="first_part_stavka">
                             <button class="redButton" onclick="selectBet(this, 3)">3</button>
                             <button class="blackButton" onclick="selectBet(this, 6)">6</button>
@@ -279,30 +280,27 @@
                         </div>
                         <div class="endCasino">
                             <img src="./2024-02-26 00.04.16.jpg" width="700px" alt="">
-                        </div>   
+                        </div>
                     </div>
-    
+
                 </div>
-            </div>
-            
+            </div
             <br><br><br><br><br><br>
-    
-            
         </div>
-        
+
         <div class="second-grid-page-style">
-            
+
             <div class="controls">
                 <button id="spin-button">Spin</button>
                 <span id="bet-amount">Current Bet: 0</span><br>
                 <span id="bet-amountTwo">Current Bet: $0</span>
-                
+
             </div>
-            
+
             <div id="message"></div>
-            
+
         </div>
-        
+
     </div>
     <div class="pawn">
         <img src="./10.png" width="50" height="50" alt="" onclick="selectBetTwo(this, 19, 36)">
@@ -416,7 +414,7 @@
                 betAmountElementTwo.textContent = 'Current Bet: $0';
             }
         }
-        
+
 
         function checkWinningBet(number) {
             if (!selectedBet) return;
