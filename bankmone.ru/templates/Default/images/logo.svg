@@ -1,0 +1,14 @@
+<svg width="202.1" height="36.8" xmlns="http://www.w3.org/2000/svg">
+ <style type="text/css">.st0{fill:#FFDD2D;}</style>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="#000" transform="matrix(0.6808517443967332,0,0,0.9283116777815345,-6.538218511264128,8.235897874332961) " font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Arvo, sans-serif" font-size="35" id="svg_14" y="23.126521" x="13.800767" stroke-width="0" fill="#000000">MONEYCRAFT</text>
+  <path stroke="#000" transform="rotate(-0.08260112255811691 100.98390960693374,17.36018943786657) " id="svg_15" d="m96.49039,15.776818l3.432766,0l1.060751,-5.123958l1.060752,5.123958l3.432765,0l-2.777161,3.166744l1.060806,5.123958l-2.777162,-3.16683l-2.777161,3.16683l1.060806,-5.123958l-2.777161,-3.166744z" stroke-width="1.5" fill="#15f704"/>
+  <text stroke="#000" transform="matrix(0.640922974359638,0,0,0.8621979887864591,43.51982775983956,12.024826259595892) " font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Arvo, sans-serif" font-size="35" id="svg_17" y="19.626551" x="157.799506" stroke-opacity="null" stroke-width="0" fill="#f7f704">    .RU</text>
+ </g>
+</svg>
