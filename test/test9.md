@@ -1,6 +1,5 @@
 # Fullstack1 group project
 
-
 ADD ALL GIT CONFIGURATIONS
 
 1. git config --global user.name "Ozodbek"
@@ -8,9 +7,7 @@ ADD ALL GIT CONFIGURATIONS
 3. git config --global credentials.username "Ozodbek"
 4. git config --global credentials.email "your-email"
 ### This project is testing project of Alisher-Company for his classes
-
 ---
-
 ### Explanation of usage
 
 - For using this project you need to install git on your computer
@@ -23,7 +20,6 @@ ADD ALL GIT CONFIGURATIONS
 - ## Then you need to use _git pull_ to pull the changes from the repository
 
 ### INSTALL
-
 
 - git clone .... => clones repository
 - cd ... => change directory to that folder
