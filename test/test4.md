@@ -8,8 +8,6 @@
 4. npm run format
 4. npm run dev
   
-  
-  
 
 ## Installing SASS
 1. npm install -D sass-loader@^10 sass 
