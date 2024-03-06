@@ -18,7 +18,6 @@
   - [re](#re)
   - [collections](#collections)
 
-
 # Exercises
 🎯 Here are some resources to help you get started with Python and exercise 💪👇️
 1. Practice Python (https://www.practicepython.org/)
