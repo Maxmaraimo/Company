@@ -1,10 +1,7 @@
-
 # This is for last backend-project 
 
 
 Steps that the project must have:
-
-
 
 
 
