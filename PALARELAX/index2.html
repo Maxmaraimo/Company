@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Racing Game</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // Getting the canvas element and context
+  var canvas = document.createElement("canvas");
+  document.body.appendChild(canvas);
+  canvas.width = 480;
+  canvas.height = 320;
+  var context = canvas.getContext("2d");
+
+  // Car object
+  var car = {
+    width: 50,
+    height: 100,
+    x: (canvas.width - 50) / 2,
+    y: canvas.height - 110,
+    speed: 5
+  };
+
+  // Movement directions
+  var keys = {
+    ArrowUp: false,
+    ArrowDown: false,
+    ArrowLeft: false,
+    ArrowRight: false
+  };
+
+  // Update the car's position
+  function update() {
+    if (keys.ArrowUp && car.y >= 0) {
+      car.y -= car.speed;
+    }
+    if (keys.ArrowDown && car.y + car.height <= canvas.height) {
+      car.y += car.speed;
+    }
+    if (keys.ArrowLeft && car.x >= 0) {
+      car.x -= car.speed;
+    }
+    if (keys.ArrowRight && car.x + car.width <= canvas.width) {
+      car.x += car.speed;
+    }
+  }
+
+  // Game Loop
+  function gameLoop() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    update();
+
+    // Drawing car
+    context.fillStyle = "#0000FF";
+    context.fillRect(car.x, car.y, car.width, car.height);
+
+    requestAnimationFrame(gameLoop);
+  }
+
+  // Keyboard events
+  document.addEventListener("keydown", function (event) {
+    if (event.key in keys) {
+      keys[event.key] = true;
+    }
+  });
+
+  document.addEventListener("keyup", function (event) {
+    if (event.key in keys) {
+      keys[event.key] = false;
+    }
+  });
+
+  gameLoop();
+</script>
+</body>
+</html>
