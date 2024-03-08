@@ -1,113 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roulette Game</title>
+    <title>Document</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="roulette-wheel">
-            <div class="ball-track"></div>
-            <div class="ball"></div>
-        </div>
-        <div class="betting-table">
-            <p>Betting options go here</p>
-        </div>
-        <div class="controls">
-            <button id="spin-button">Spin</button>
-            <span id="bet-amount">Current Bet: $0</span>
-        </div>
-        <div id="message"></div>
-    </div>
-
-    <script>
-        const spinButton = document.getElementById('spin-button');
-        const messageElement = document.getElementById('message');
-        const wheel = document.querySelector('.roulette-wheel');
-        const ball = document.querySelector('.ball');
-
-        let isSpinning = false;
-        let winningNumber = 0;
-
-        spinButton.addEventListener('click', () => {
-            if (!isSpinning) {
-                isSpinning = true;
-                messageElement.textContent = ''; // Clear any previous message
-                
-                winningNumber = Math.floor(Math.random() * 37) + 1; // 0 for green, 1-36 for numbered pockets
-                
-                wheel.style.transition = 'transform 2.7s ease-in-out';
-                wheel.style.transform = `rotate(${720 + (winningNumber * 9.720)}deg)`; // Each number occupies 9.729 degrees
-                
-                setTimeout(() => {
-                    messageElement.textContent = `Winning number: ${winningNumber}`;
-                    isSpinning = false;
-                }, 2700); // Animation duration is 5 seconds
-            }
-        });
-
-
-        const wheelSegments = document.querySelector('.roulette-wheel');
-        for (let i = 0; i < 37; i++) {
-            const segment = document.createElement('div');
-            segment.classList.add('segment');
-            segment.textContent = i;
-            segment.style.transform = `rotate(${i * 9.729}deg)`; // Each number occupies 9.729 degrees
-            wheelSegments.appendChild(segment);
-        }
-    </script>
+    <span class="trusted-by-text">Trusted by: </span>
+    <picture st><img
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/meta.12b5e5c.png"
+            alt="facebook" /> </picture>
+    <picture>
+        <source
+            srcset="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/google.9d71a37.png 1x, https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/google2x.0053d08.png 2x"
+            media="(max-width: 199px)" />
+        <source
+            srcset="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/google.61e78c8.png 1x, https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/google2x.4fa6c20.png 2x"
+            media="(min-width: 900px)" /><img
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/google.61e78c8.png"
+            alt="Google" />
+    </picture>
+    <picture>
+        <source
+            srcset="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/netflix.35dc5cd.png 1x, https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/netflix2x.9022712.png 2x"
+            media="(max-width: 899px)" />
+        <source
+            srcset="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/netflix.96c5e3f.png 1x, https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/netflix2x.6b36ad6.png 2x"
+            media="(min-width: 900px)" /><img
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/netflix.96c5e3f.png"
+            alt="NETFLIX" />
+    </picture>
+    <picture>
+        <source
+            srcset="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/pandg.967b1ad.png 1x, https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/pandg2x.6665fbe.png 2x"
+            media="(max-width: 899px)" />
+        <source
+            srcset="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/pandg.0f4cfc2.png 1x, https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/pandg2x.0d06f7b.png 2x"
+            media="(min-width: 900px)" /><img
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/pandg.0f4cfc2.png"
+            alt="P&amp;G" />
+    </picture>
+    <picture>
+        <source
+            srcset="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/paypal.910e738.png 1x, https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/paypal2x.bd199ac.png 2x"
+            media="(max-width: 899px)" />
+        <source
+            srcset="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/paypal.305e264.png 1x, https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/paypal2x.d2fa54d.png 2x"
+            media="(min-width: 100px)" /><img
+            src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/paypal.305e264.png"
+            alt="PayPal" />
+    </picture>
 </body>
 
-<style>
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 600px;
-        margin: 0 auto;
-    }
-
-    .roulette-wheel {
-        width: 300px;
-        height: 300px;
-        border: 1px solid rgb(149, 24, 24);
-        border-radius: 50%;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .ball-track {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 2px solid black;
-        border-radius: 50%;
-        box-sizing: border-box;
-    }
-
-    .ball {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: red;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
-
-    .segment {
-        position: absolute;
-        width: 0;
-        height: 50%;
-        border: 1px solid black;
-        transform-origin: bottom;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-</style>
 </html>
