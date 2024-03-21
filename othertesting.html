@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+</head>
+
+<body>
+    <h2>Отправить письмо на почту</h2>
+    <form id="emailForm">
+        <label for="to">Кому:</label><br>
+        <input type="email" id="to" name="to" required><br>
+        <label for="subject">Тема:</label><br>
+        <input type="text" id="subject" name="subject" required><br>
+        <label for="message">Сообщение:</label><br>
+        <textarea id="message" name="message" required></textarea><br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        document.getElementById("emailForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Предотвратить отправку формы по умолчанию
+
+            let formData = new FormData(this); // Получить данные формы
+
+            // Создать объект XMLHttpRequest
+            let xhr = new XMLHttpRequest();
+
+            // Указать метод и URL-адрес сервера SendGrid API
+            xhr.open("POST", "https://api.sendgrid.com/v3/mail/send", true);
+
+            // Установить заголовок Authorization для отправки API-ключа
+            xhr.setRequestHeader("Authorization", "Bearer YOUR_SENDGRID_API_KEY");
+
+            // Установить заголовок Content-Type для отправки JSON данных
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            // Формирование JSON объекта с данными письма
+            let emailData = {
+                personalizations: [
+                    {
+                        to: [{ email: formData.get('to') }]
+                    }
+                ],
+                from: { email: "ozodbekmahmaraimov16@gmail.com" },
+                subject: formData.get('subject'),
+                content: [{ type: "text/plain", value: formData.get('message') }]
+            };
+
+            // Отправить данные формы в виде JSON
+            xhr.send(JSON.stringify(emailData));
+
+            // Обработать ответ
+            xhr.onload = function () {
+                if (xhr.status == 202) {
+                    alert("Письмо успешно отправлено!");
+                    // Очистить форму после успешной отправки
+                    document.getElementById("emailForm").reset();
+                } else {
+                    alert("Произошла ошибка при отправке письма.");
+                }
+            };
+        });
+
+    </script>
+</body>
+
+</html>
