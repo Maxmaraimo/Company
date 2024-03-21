@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	body {
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+	}
+	h1 {
+		margin: 25px 35px;
+	}
+	.redH1 {
+		color: red;
+	}
+	.blackh1 {
+		color: black;
+	}
+	.container {
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+		margin: 30px 35px;
+		gap: 30px;
+	}
+
+	.first_ch {
+		height: 440px;
+		width: 320px;
+		box-shadow: 2px 2px 4px rgb(200, 199, 199), -1px -1px 2px rgb(209, 205, 205);
+		border-radius: 28px;
+	}
+	.first_ch h3 {
+		margin: 2px 20px;
+	}
+	.first_ch hr {
+		color: red;
+		background-color: red;
+		width: 70px;
+		height: 1px;
+		margin: 5px 22px;
+	}
+	.first_ch_grid {
+		display: grid;
+		grid-template-columns: repeat(2,170px);
+		margin: 10px 20px;
+		font-size: 15px;
+	}
+	.first_ch_grid .first {
+		color: #828282;
+	}
+	.first_ch_grid .second {
+		color: #484848;
+	}
+	.second_ch_grid {
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		margin: 10px 20px;
+		font-size: 12px;
+	}
+	.second_ch_grid .first {
+		color: #484848;
+	}
+	.second_ch_grid .second {
+		color: #EF233C;
+	}
+	.second_ch_grid .third {
+		color: #484848;
+	}
+	.endButton {
+		width: 320px;
+		height: 65px;
+		padding: 15px;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		font-size: 17px;
+		background-color: #EF233C;
+		border-radius: 100px;
+		border: none;
+		color: snow;
+		margin: 10px 0px;
+	}
+</style>
+<body>
+
+	<h1><span class="redH1">Цены на аренду </span><span class="blackh1">авто с водителем</span></h1>
+	<br>
+
+	<div class="container">
+		<div class="ch_container">
+			<div class="first_ch">
+				<img src="https://s3-alpha-sig.figma.com/img/1075/f6c2/dbf62e9e8e513b0fb5cd223a36f694b4?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RacVwkBSp9o3TMuNC01RnqeuQeTuRJA0FoJ6rF4Jde92yQ8p1939mhozFyMJ-3UQKuHJvAkNivkdfwYkz4hruKwHd9DGuDJscinKXffaMmoqMgpCz~1CmgysIe~JEMS7MrvHHiMFinshJecL48Tw-rXZAK6giRdUClra~1lM-pn~tQAc7~kZTvjNVAijpVbQ1AiRmuuY2Ym4vWk2UZcpsJpHo8BK5QNujq73gkR4iV5TIl3rXYRsmyMMZdUlpggDuSZ4R0ZmgBP9MJFURpsifEnlRa6Q3IUy-qMs1fg~NdX4kLVj6JMypj735t55yK2cPRGuw~ZLA5CeTEg8hsRANw__" alt="">
+				<br><br>
+				<h3>Mercedes E 213</h3>
+				<hr>
+				<div class="first_ch_grid">
+					<div class="first">
+						<p>Аренда:</p>
+						<p>Бизнес-день:</p>
+						<p>Трансфер:</p>
+						<p>Свадьба:</p>
+					</div>
+					<div class="second">
+						<p>1 700 р./час</p>
+						<p>от 13 600 р.</p>
+						<p>5 000 р.</p>
+						<p>2 000 р./ч.</p>
+					</div>
+				</div>
+
+				<div class="second_ch_grid">
+					<h4 class="first">Мин.аренда</h4>
+					<h4 class="second">2+1</h4>
+					<h4 class="third">5100 р.</h4>
+				</div>
+			</div>
+			<button class="endButton">Заказать транспорт</button>
+		</div>
+
+		<div class="ch_container">
+			<div class="first_ch">
+				<img src="https://s3-alpha-sig.figma.com/img/f664/14e7/eeb6416d057239baf948621fc73eb9fb?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LwPr8UOLNVmKgTHVJhvXgm5AXNz58NGmT49ySYaAfQnYJz8h74W2MStGYagoXuCOE3dCSQO4JAl-hvMQ0nQhb8wecgydhrrqYQPpy9M-~E8ZDuFpQXmNjbVHbc5PpCTLH285-LavVr7ENeUw51D1cU1HFE524FXWpPkGE5IU9-sGwTp2ThBbNsqWOf60s41G1h0L4noSpOqxhB~VGKasXC~Twaaegd75NMGIGkRCxLW8fs5Rk6FIWlaX~hF9HPL4mmiBa~se~lKzRni8fz1A2v2Mmqt5uY4JJUI2f4KR1HiP50a8hPfVHj4Ll8B5HugiDYPBYPsXPsbFtlNTV43dlg__" alt="">
+				<br><br>
+				<h3>Bentley Continental FS</h3>
+				<hr>
+				<div class="first_ch_grid">
+					<div class="first">
+						<p>Аренда:</p>
+						<p>Бизнес-день:</p>
+						<p>Трансфер:</p>
+						<p>Свадьба:</p>
+					</div>
+					<div class="second">
+						<p>1 700 р./час</p>
+						<p>от 13 600 р.</p>
+						<p>5 000 р.</p>
+						<p>2 000 р./ч.</p>
+					</div>
+				</div>
+
+				<div class="second_ch_grid">
+					<h4 class="first">Мин.аренда</h4>
+					<h4 class="second">2+1</h4>
+					<h4 class="third">5100 р.</h4>
+				</div>
+			</div>
+			<button class="endButton">Заказать транспорт</button>
+		</div>
+
+		<div class="ch_container">
+			<div class="first_ch">
+				<img src="https://s3-alpha-sig.figma.com/img/1075/f6c2/dbf62e9e8e513b0fb5cd223a36f694b4?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RacVwkBSp9o3TMuNC01RnqeuQeTuRJA0FoJ6rF4Jde92yQ8p1939mhozFyMJ-3UQKuHJvAkNivkdfwYkz4hruKwHd9DGuDJscinKXffaMmoqMgpCz~1CmgysIe~JEMS7MrvHHiMFinshJecL48Tw-rXZAK6giRdUClra~1lM-pn~tQAc7~kZTvjNVAijpVbQ1AiRmuuY2Ym4vWk2UZcpsJpHo8BK5QNujq73gkR4iV5TIl3rXYRsmyMMZdUlpggDuSZ4R0ZmgBP9MJFURpsifEnlRa6Q3IUy-qMs1fg~NdX4kLVj6JMypj735t55yK2cPRGuw~ZLA5CeTEg8hsRANw__" alt="">
+				<br><br>
+				<h3>Mercedes E 213</h3>
+				<hr>
+				<div class="first_ch_grid">
+					<div class="first">
+						<p>Аренда:</p>
+						<p>Бизнес-день:</p>
+						<p>Трансфер:</p>
+						<p>Свадьба:</p>
+					</div>
+					<div class="second">
+						<p>1 700 р./час</p>
+						<p>от 13 600 р.</p>
+						<p>5 000 р.</p>
+						<p>2 000 р./ч.</p>
+					</div>
+				</div>
+
+				<div class="second_ch_grid">
+					<h4 class="first">Мин.аренда</h4>
+					<h4 class="second">2+1</h4>
+					<h4 class="third">5100 р.</h4>
+				</div>
+			</div>
+			<button class="endButton">Заказать транспорт</button>
+		</div>
+
+		<div class="ch_container">
+			<div class="first_ch">
+				<img src="https://s3-alpha-sig.figma.com/img/f664/14e7/eeb6416d057239baf948621fc73eb9fb?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LwPr8UOLNVmKgTHVJhvXgm5AXNz58NGmT49ySYaAfQnYJz8h74W2MStGYagoXuCOE3dCSQO4JAl-hvMQ0nQhb8wecgydhrrqYQPpy9M-~E8ZDuFpQXmNjbVHbc5PpCTLH285-LavVr7ENeUw51D1cU1HFE524FXWpPkGE5IU9-sGwTp2ThBbNsqWOf60s41G1h0L4noSpOqxhB~VGKasXC~Twaaegd75NMGIGkRCxLW8fs5Rk6FIWlaX~hF9HPL4mmiBa~se~lKzRni8fz1A2v2Mmqt5uY4JJUI2f4KR1HiP50a8hPfVHj4Ll8B5HugiDYPBYPsXPsbFtlNTV43dlg__" alt="">
+				<br><br>
+				<h3>Bentley Continental FS</h3>
+				<hr>
+				<div class="first_ch_grid">
+					<div class="first">
+						<p>Аренда:</p>
+						<p>Бизнес-день:</p>
+						<p>Трансфер:</p>
+						<p>Свадьба:</p>
+					</div>
+					<div class="second">
+						<p>1 700 р./час</p>
+						<p>от 13 600 р.</p>
+						<p>5 000 р.</p>
+						<p>2 000 р./ч.</p>
+					</div>
+				</div>
+
+				<div class="second_ch_grid">
+					<h4 class="first">Мин.аренда</h4>
+					<h4 class="second">2+1</h4>
+					<h4 class="third">5100 р.</h4>
+				</div>
+			</div>
+			<button class="endButton">Заказать транспорт</button>
+		</div>
+
+
+		<!--  -->
+
+		<div class="ch_container">
+			<div class="first_ch">
+				<img src="https://s3-alpha-sig.figma.com/img/1075/f6c2/dbf62e9e8e513b0fb5cd223a36f694b4?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RacVwkBSp9o3TMuNC01RnqeuQeTuRJA0FoJ6rF4Jde92yQ8p1939mhozFyMJ-3UQKuHJvAkNivkdfwYkz4hruKwHd9DGuDJscinKXffaMmoqMgpCz~1CmgysIe~JEMS7MrvHHiMFinshJecL48Tw-rXZAK6giRdUClra~1lM-pn~tQAc7~kZTvjNVAijpVbQ1AiRmuuY2Ym4vWk2UZcpsJpHo8BK5QNujq73gkR4iV5TIl3rXYRsmyMMZdUlpggDuSZ4R0ZmgBP9MJFURpsifEnlRa6Q3IUy-qMs1fg~NdX4kLVj6JMypj735t55yK2cPRGuw~ZLA5CeTEg8hsRANw__" alt="">
+				<br><br>
+				<h3>Mercedes E 213</h3>
+				<hr>
+				<div class="first_ch_grid">
+					<div class="first">
+						<p>Аренда:</p>
+						<p>Бизнес-день:</p>
+						<p>Трансфер:</p>
+						<p>Свадьба:</p>
+					</div>
+					<div class="second">
+						<p>1 700 р./час</p>
+						<p>от 13 600 р.</p>
+						<p>5 000 р.</p>
+						<p>2 000 р./ч.</p>
+					</div>
+				</div>
+
+				<div class="second_ch_grid">
+					<h4 class="first">Мин.аренда</h4>
+					<h4 class="second">2+1</h4>
+					<h4 class="third">5100 р.</h4>
+				</div>
+			</div>
+			<button class="endButton">Заказать транспорт</button>
+		</div>
+
+		<div class="ch_container">
+			<div class="first_ch">
+				<img src="https://s3-alpha-sig.figma.com/img/f664/14e7/eeb6416d057239baf948621fc73eb9fb?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LwPr8UOLNVmKgTHVJhvXgm5AXNz58NGmT49ySYaAfQnYJz8h74W2MStGYagoXuCOE3dCSQO4JAl-hvMQ0nQhb8wecgydhrrqYQPpy9M-~E8ZDuFpQXmNjbVHbc5PpCTLH285-LavVr7ENeUw51D1cU1HFE524FXWpPkGE5IU9-sGwTp2ThBbNsqWOf60s41G1h0L4noSpOqxhB~VGKasXC~Twaaegd75NMGIGkRCxLW8fs5Rk6FIWlaX~hF9HPL4mmiBa~se~lKzRni8fz1A2v2Mmqt5uY4JJUI2f4KR1HiP50a8hPfVHj4Ll8B5HugiDYPBYPsXPsbFtlNTV43dlg__" alt="">
+				<br><br>
+				<h3>Bentley Continental FS</h3>
+				<hr>
+				<div class="first_ch_grid">
+					<div class="first">
+						<p>Аренда:</p>
+						<p>Бизнес-день:</p>
+						<p>Трансфер:</p>
+						<p>Свадьба:</p>
+					</div>
+					<div class="second">
+						<p>1 700 р./час</p>
+						<p>от 13 600 р.</p>
+						<p>5 000 р.</p>
+						<p>2 000 р./ч.</p>
+					</div>
+				</div>
+
+				<div class="second_ch_grid">
+					<h4 class="first">Мин.аренда</h4>
+					<h4 class="second">2+1</h4>
+					<h4 class="third">5100 р.</h4>
+				</div>
+			</div>
+			<button class="endButton">Заказать транспорт</button>
+		</div>
+
+		<div class="ch_container">
+			<div class="first_ch">
+				<img src="https://s3-alpha-sig.figma.com/img/1075/f6c2/dbf62e9e8e513b0fb5cd223a36f694b4?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RacVwkBSp9o3TMuNC01RnqeuQeTuRJA0FoJ6rF4Jde92yQ8p1939mhozFyMJ-3UQKuHJvAkNivkdfwYkz4hruKwHd9DGuDJscinKXffaMmoqMgpCz~1CmgysIe~JEMS7MrvHHiMFinshJecL48Tw-rXZAK6giRdUClra~1lM-pn~tQAc7~kZTvjNVAijpVbQ1AiRmuuY2Ym4vWk2UZcpsJpHo8BK5QNujq73gkR4iV5TIl3rXYRsmyMMZdUlpggDuSZ4R0ZmgBP9MJFURpsifEnlRa6Q3IUy-qMs1fg~NdX4kLVj6JMypj735t55yK2cPRGuw~ZLA5CeTEg8hsRANw__" alt="">
+				<br><br>
+				<h3>Mercedes E 213</h3>
+				<hr>
+				<div class="first_ch_grid">
+					<div class="first">
+						<p>Аренда:</p>
+						<p>Бизнес-день:</p>
+						<p>Трансфер:</p>
+						<p>Свадьба:</p>
+					</div>
+					<div class="second">
+						<p>1 700 р./час</p>
+						<p>от 13 600 р.</p>
+						<p>5 000 р.</p>
+						<p>2 000 р./ч.</p>
+					</div>
+				</div>
+
+				<div class="second_ch_grid">
+					<h4 class="first">Мин.аренда</h4>
+					<h4 class="second">2+1</h4>
+					<h4 class="third">5100 р.</h4>
+				</div>
+			</div>
+			<button class="endButton">Заказать транспорт</button>
+		</div>
+
+		<div class="ch_container">
+			<div class="first_ch">
+				<img src="https://s3-alpha-sig.figma.com/img/f664/14e7/eeb6416d057239baf948621fc73eb9fb?Expires=1711929600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LwPr8UOLNVmKgTHVJhvXgm5AXNz58NGmT49ySYaAfQnYJz8h74W2MStGYagoXuCOE3dCSQO4JAl-hvMQ0nQhb8wecgydhrrqYQPpy9M-~E8ZDuFpQXmNjbVHbc5PpCTLH285-LavVr7ENeUw51D1cU1HFE524FXWpPkGE5IU9-sGwTp2ThBbNsqWOf60s41G1h0L4noSpOqxhB~VGKasXC~Twaaegd75NMGIGkRCxLW8fs5Rk6FIWlaX~hF9HPL4mmiBa~se~lKzRni8fz1A2v2Mmqt5uY4JJUI2f4KR1HiP50a8hPfVHj4Ll8B5HugiDYPBYPsXPsbFtlNTV43dlg__" alt="">
+				<br><br>
+				<h3>Bentley Continental FS</h3>
+				<hr>
+				<div class="first_ch_grid">
+					<div class="first">
+						<p>Аренда:</p>
+						<p>Бизнес-день:</p>
+						<p>Трансфер:</p>
+						<p>Свадьба:</p>
+					</div>
+					<div class="second">
+						<p>1 700 р./час</p>
+						<p>от 13 600 р.</p>
+						<p>5 000 р.</p>
+						<p>2 000 р./ч.</p>
+					</div>
+				</div>
+
+				<div class="second_ch_grid">
+					<h4 class="first">Мин.аренда</h4>
+					<h4 class="second">2+1</h4>
+					<h4 class="third">5100 р.</h4>
+				</div>
+			</div>
+			<button class="endButton">Заказать транспорт</button>
+		</div>
+		
+	</div>
+	
+</body>
+</html>
